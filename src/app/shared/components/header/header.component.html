@@ -1,0 +1,62 @@
+<header class="site-header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a class="logo" routerLink="/">
+      <div class="logo-mark" aria-hidden="true">T</div>
+      <div class="logo-text">
+        <span class="logo-name">Tshepisong</span>
+        <span class="logo-sub">Community Hub</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+      @for (item of navItems; track item.route) {
+        <a
+          class="nav-link"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/' }">
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- CTA + Hamburger -->
+    <div class="header-actions">
+      <a class="btn-cta" routerLink="/contact">List My Business</a>
+      <button
+        class="hamburger"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-label="Toggle navigation"
+        (click)="toggleMobile()">
+        <span [class.open]="mobileOpen()">☰</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+@if (mobileOpen()) {
+  <div class="mobile-overlay" (click)="closeMobile()" aria-hidden="true"></div>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-top">
+      <div class="logo-mark" style="width:36px;height:36px;font-size:16px">T</div>
+      <button class="mobile-close" (click)="closeMobile()" aria-label="Close menu">✕</button>
+    </div>
+    @for (item of navItems; track item.route) {
+      <a
+        class="mobile-link"
+        [routerLink]="item.route"
+        routerLinkActive="mobile-link-active"
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        (click)="closeMobile()">
+        {{ item.label }}
+      </a>
+    }
+    <a class="btn-cta mobile-cta" routerLink="/contact" (click)="closeMobile()">
+      List My Business — Free
+    </a>
+  </nav>
+}

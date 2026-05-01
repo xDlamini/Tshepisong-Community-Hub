@@ -1,0 +1,222 @@
+/* Re-use hero pattern from home */
+.page-hero {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0d3a1f 0%, #1a6b3a 45%, #2a5c3a 75%, #1e4a2a 100%);
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+  background-size: 20px 20px;
+}
+
+.hero-circles {
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 70px solid rgba(200,146,42,0.07);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem var(--space-lg);
+  color: #fff;
+  max-width: min(600px, 100%);
+  margin: 0 auto 0 max(calc((100vw - 1100px) / 2), var(--space-lg));
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200,146,42,0.2);
+  border: 1px solid rgba(200,146,42,0.4);
+  color: #f5d090;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 5vw, 40px);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.hero-content h1 em { color: #f5d090; }
+
+.hero-content p {
+  font-size: 15px;
+  opacity: 0.82;
+  color: #fff;
+}
+
+/* Filter + Count */
+.result-count {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* Grid */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* Empty */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-emoji { font-size: 40px; display: block; margin-bottom: 0.75rem; }
+
+/* Suggest CTA */
+.suggest-cta {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-light);
+  border-radius: var(--radius-lg);
+}
+
+.suggest-cta p {
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
+
+/* ── MODAL ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: calc(var(--z-modal) - 1);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  z-index: var(--z-modal);
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@media (min-width: 640px) {
+  .modal {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(560px, 92vw);
+    border-radius: var(--radius-xl);
+    max-height: 85vh;
+    animation: scaleIn 0.22s ease;
+  }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.97); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.08);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--color-ink);
+  z-index: 2;
+}
+
+.modal-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-light), #e8e2d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.modal-meta {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.modal-meta strong { color: var(--color-ink); }
+.modal-meta a { color: var(--color-primary); }
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}

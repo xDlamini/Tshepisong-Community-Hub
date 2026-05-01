@@ -1,0 +1,70 @@
+<!-- businesses.component.html -->
+<section class="page-hero">
+  <div class="hero-bg">
+    <div class="hero-pattern"></div>
+    <div class="hero-circles"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Local Economy</div>
+    <h1>Shop Local.<br /><em>Grow Tshepisong.</em></h1>
+    <p>
+      Every rand you spend here stays in Tshepisong. Support our entrepreneurs.
+    </p>
+  </div>
+</section>
+
+<div class="section-pad">
+  <div class="container">
+    <app-filter-bar
+      [options]="filterOptions"
+      [activeValue]="activeFilter()"
+      ariaLabel="Filter businesses by category"
+      (filterChange)="onFilterChange($event)"
+    />
+
+    <p class="result-count">
+      <strong>{{ filteredBusinesses().length }}</strong> business{{
+        filteredBusinesses().length !== 1 ? "es" : ""
+      }}
+      found
+    </p>
+
+    <div class="biz-grid">
+      @for (biz of filteredBusinesses(); track biz.id) {
+        <app-business-card [business]="biz" />
+      }
+
+      <!-- List Your Business Card -->
+      <a
+        class="list-biz-card"
+        routerLink="/contact"
+        aria-label="List your business"
+      >
+        <span class="list-icon">➕</span>
+        <h3>List Your Business Here</h3>
+        <p>Get in front of hundreds of residents — completely free.</p>
+        <span class="btn btn-primary" style="pointer-events: none"
+          >Get Listed Free</span
+        >
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="spotlight-band">
+  <div class="container">
+    <div class="spotlight-inner">
+      <div>
+        <span class="sec-eyebrow">Business of the Month</span>
+        <h2>Meet Immaculate</h2>
+        <p>
+          "I started with one TV stand in my living room. Now I serve over 200
+          families from Tshepisong and other communities every month. This
+          community gave me everything — and I give it back every day."
+        </p>
+        <p class="spotlight-credit">— Immaculate, Carpenter Owner since 2016</p>
+      </div>
+      <div class="spotlight-emoji" aria-hidden="true">💇</div>
+    </div>
+  </div>
+</section>

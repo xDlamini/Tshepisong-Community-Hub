@@ -1,0 +1,83 @@
+.page-hero,.hero-bg,.hero-pattern,.hero-circles,.hero-content,.hero-badge {
+  /* same as spotlight — inherit via global class if you prefer */
+}
+
+.page-hero {
+  position: relative; min-height: 280px; display: flex;
+  align-items: flex-end; overflow: hidden; background: var(--color-primary-dark);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,#0d3a1f 0%,#1a6b3a 45%,#2a5c3a 75%,#1e4a2a 100%);
+}
+.hero-pattern {
+  position: absolute; inset: 0; opacity:.05;
+  background-image: repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+  background-size: 20px 20px;
+}
+.hero-circles {
+  position: absolute; right:-80px; top:-80px;
+  width:380px; height:380px; border-radius:50%;
+  border:70px solid rgba(200,146,42,.07);
+}
+.hero-content {
+  position: relative; z-index:2; padding:2.5rem var(--space-lg);
+  color:#fff; max-width:min(600px,100%);
+  margin:0 auto 0 max(calc((100vw - 1100px) / 2),var(--space-lg));
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(200,146,42,.2); border:1px solid rgba(200,146,42,.4);
+  color:#f5d090; font-size:11px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; padding:5px 14px; border-radius:var(--radius-pill);
+  margin-bottom:1rem;
+}
+.hero-content h1 {
+  font-family:var(--font-display); font-size:clamp(26px,5vw,40px);
+  color:#fff; line-height:1.15; margin-bottom:.6rem;
+}
+.hero-content h1 em { color:#f5d090; }
+.hero-content p { font-size:15px; opacity:.82; color:#fff; }
+
+.result-count {
+  font-size:13px; color:var(--color-muted); margin-top:1rem;
+}
+
+.biz-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+  gap:1rem; margin-top:1.25rem;
+}
+
+/* List Your Business placeholder card */
+.list-biz-card {
+  border:2px dashed var(--color-border); border-radius:var(--radius-lg);
+  background:none; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; text-align:center; padding:2rem 1.5rem;
+  cursor:pointer; text-decoration:none; gap:.5rem;
+  transition:border-color var(--transition-base);
+}
+.list-biz-card:hover { border-color:var(--color-primary); }
+.list-icon { font-size:32px; }
+.list-biz-card h3 { font-size:15px; font-weight:600; color:var(--color-ink); }
+.list-biz-card p  { font-size:13px; color:var(--color-muted); }
+
+/* Business of the Month spotlight */
+.spotlight-band {
+  background:var(--color-light); padding:3rem var(--space-lg);
+}
+.spotlight-inner {
+  display:grid; grid-template-columns:1fr auto;
+  gap:2rem; align-items:center; max-width:1100px; margin:0 auto;
+}
+.spotlight-inner h2 {
+  font-family:var(--font-display); font-size:clamp(20px,3vw,28px);
+  margin-bottom:.75rem;
+}
+.spotlight-inner p { font-size:15px; line-height:1.75; max-width:520px; }
+.spotlight-credit { font-size:13px; color:var(--color-accent); font-weight:500; margin-top:.5rem; }
+.spotlight-emoji { font-size:64px; opacity:.5; }
+
+@media(max-width:600px) {
+  .spotlight-inner { grid-template-columns:1fr; }
+  .spotlight-emoji { display:none; }
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "community-park",
+    "name": "Tshepisong Community Park",
+    "category": "park",
+    "description": "Open green space with walking paths, benches and a children's play area. A family gathering point every weekend.",
+    "longDescription": "Tshepisong Community Park is one of the most loved open spaces in the area. Featuring walking paths lined with trees, benches, a children's play area, and open fields perfect for community gatherings. The park hosts the monthly community clean-up day and is home to informal markets on weekends.",
+    "imageUrl": "assets/images/park.jpg",
+    "emoji": "🌳",
+    "hours": "Open daily · Sunrise to sunset",
+    "address": "Main Road, Tshepisong, Roodepoort",
+    "isFeatured": true
+  },
+  {
+    "id": "primary-school",
+    "name": "Tshepisong Primary School",
+    "category": "school",
+    "description": "Grade R to Grade 7. Dedicated teachers, school feeding scheme, and a community sports field.",
+    "imageUrl": "assets/images/school.jpg",
+    "emoji": "🏫",
+    "hours": "Mon–Fri · 07:30–14:00",
+    "address": "School Street, Tshepisong, Roodepoort",
+    "contact": "011 000 0000",
+    "isFeatured": true
+  },
+  {
+    "id": "sports-ground",
+    "name": "Tshepisong Sports Ground",
+    "category": "sports",
+    "description": "Full-size soccer field and athletics track. Home of local league matches and community sports days.",
+    "imageUrl": "assets/images/sports.jpg",
+    "emoji": "⚽",
+    "hours": "Weekends · 08:00–18:00",
+    "address": "Sports Road, Tshepisong, Roodepoort",
+    "isFeatured": true
+  },
+  {
+    "id": "public-library",
+    "name": "Tshepisong Public Library",
+    "category": "library",
+    "description": "Books, study spaces, free internet access and Wi-Fi. Open to all residents. Children's reading corner available.",
+    "imageUrl": "assets/images/library.jpg",
+    "emoji": "📚",
+    "hours": "Mon–Sat · 09:00–17:00",
+    "address": "Library Avenue, Tshepisong, Roodepoort",
+    "contact": "011 000 0001",
+    "isFeatured": true
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "mama-zinhle",
+    "name": "Mama Zinhle's Hair Salon",
+    "category": "beauty",
+    "categoryLabel": "Hair & Beauty",
+    "description": "Braids, relaxers, weaves and natural hair care. Serving Tshepisong families for over 8 years. Walk-ins welcome Mon–Sat.",
+    "emoji": "💇",
+    "phone": "072 123 4567",
+    "whatsapp": "27721234567",
+    "address": "Main Road, Tshepisong",
+    "hours": "Mon–Sat · 08:00–18:00",
+    "isFeatured": true
+  },
+  {
+    "id": "thabos-braai",
+    "name": "Thabo's Braai Corner",
+    "category": "food",
+    "categoryLabel": "Food & Takeaways",
+    "description": "Fresh braai, pap and chakalaka every Friday to Sunday. The best spot after the match. Catering for events available.",
+    "emoji": "🍖",
+    "phone": "073 234 5678",
+    "whatsapp": "27732345678",
+    "address": "Sports Road, Tshepisong",
+    "hours": "Fri–Sun · 11:00–21:00",
+    "isFeatured": true
+  },
+  {
+    "id": "mpho-electrics",
+    "name": "Mpho Electrics",
+    "category": "trades",
+    "categoryLabel": "Repairs & Trades",
+    "description": "Certified electrician — wiring, fault finding, prepaid meters. Affordable rates. Same-day service for urgent faults.",
+    "emoji": "🔧",
+    "phone": "074 345 6789",
+    "whatsapp": "27743456789",
+    "hours": "Mon–Sat · 07:00–17:00",
+    "isFeatured": true
+  }
+]

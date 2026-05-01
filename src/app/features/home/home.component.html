@@ -1,0 +1,141 @@
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" aria-label="Welcome to Tshepisong">
+  <div class="hero-bg">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-circles" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Roodepoort · Johannesburg · South Africa</div>
+
+    <h1>
+      Welcome to<br />
+      <em>Tshepisong</em> —<br />
+      Our Home, Our Pride.
+    </h1>
+
+    <p>
+      Discover schools, parks, local businesses, services and everything that
+      makes our community a great place to call home.
+    </p>
+
+    <div class="hero-btns">
+      <a class="btn btn-primary" routerLink="/spotlight"
+        >Explore Our Community</a
+      >
+      <a class="btn btn-outline" routerLink="/businesses">Local Businesses</a>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      @for (stat of stats; track stat.label) {
+        <div class="hero-stat">
+          <span class="stat-num">{{ stat.num }}</span>
+          <span class="stat-lbl">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMMUNITY HIGHLIGHTS ══════════════════ -->
+<section class="section-pad" aria-labelledby="highlights-title">
+  <div class="container">
+    <app-section-header
+      eyebrow="Our Spaces"
+      title="What Makes Tshepisong Great"
+      subtitle="From the library to the soccer field — the spaces that bring us together."
+    />
+
+    <div class="highlights-grid">
+      @for (h of highlights; track h.name) {
+        <a
+          class="highlight-card"
+          [routerLink]="['/spotlight']"
+          [queryParams]="{ cat: h.filter }"
+          [style.background]="h.bg"
+          [attr.aria-label]="'Explore ' + h.name"
+        >
+          <div class="hc-overlay" aria-hidden="true"></div>
+          <div class="hc-emoji" aria-hidden="true">{{ h.emoji }}</div>
+          <div class="hc-body">
+            <span class="hc-badge">{{ h.badge }}</span>
+            <h3 class="hc-name">{{ h.name }}</h3>
+            <p class="hc-desc">{{ h.desc }}</p>
+          </div>
+          <span class="hc-arrow" aria-hidden="true">→</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FEATURED BUSINESSES ══════════════════ -->
+<section class="section-pad section-light" aria-labelledby="biz-title">
+  <div class="container">
+    <app-section-header
+      eyebrow="Shop Local"
+      title="Featured Local Businesses"
+      subtitle="These businesses are right here in your community. Find them, use them, support them."
+    />
+
+    <div class="biz-grid">
+      @for (biz of featuredBusinesses(); track biz.id) {
+        <app-business-card [business]="biz" />
+      }
+    </div>
+
+    <div class="biz-footer">
+      <a class="btn btn-secondary" routerLink="/businesses"
+        >See All Businesses →</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ NOTICE BOARD ══════════════════ -->
+<section class="section-pad" aria-labelledby="notices-title">
+  <div class="container">
+    <app-section-header
+      eyebrow="Stay Informed"
+      title="Community Notice Board"
+      subtitle="What's happening in Tshepisong right now."
+    />
+
+    <div class="notices-list">
+      @for (notice of notices(); track notice.id) {
+        <article class="notice-item">
+          <div
+            class="notice-date"
+            [attr.aria-label]="notice.monthShort + ' ' + notice.dayNum"
+          >
+            <span class="notice-month">{{ notice.monthShort }}</span>
+            <span class="notice-day">{{ notice.dayNum }}</span>
+          </div>
+          <div class="notice-body">
+            <h3 class="notice-title">{{ notice.title }}</h3>
+            <p class="notice-text">{{ notice.body }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GET INVOLVED CTA ══════════════════ -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="cta-inner">
+    <span class="sec-eyebrow sec-eyebrow-white">Be Part of This</span>
+    <h2 id="cta-title">Tshepisong Is Built by Its People</h2>
+    <p>
+      Whether you run a business, have a story to share, or want your
+      organisation featured — this website belongs to all of us.
+    </p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" routerLink="/contact"
+        >List Your Business — Free</a
+      >
+      <a class="btn btn-outline" routerLink="/contact">Send Us a Message</a>
+    </div>
+  </div>
+</section>

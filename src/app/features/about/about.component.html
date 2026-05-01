@@ -1,0 +1,127 @@
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="hero-bg"><div class="hero-pattern"></div><div class="hero-circles"></div></div>
+  <div class="hero-content">
+    <div class="hero-badge">Our Story</div>
+    <h1>Tshepisong —<br>A Name That Means <em>Hope.</em></h1>
+    <p>A township west of Johannesburg, built on community, resilience, and the spirit of togetherness.</p>
+  </div>
+</section>
+
+<!-- ── OUR STORY ── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <app-section-header
+          eyebrow="Our Story"
+          title="Rooted in Community. Built on Hope."
+        />
+        <p>
+          Tshepisong is located in Roodepoort, west of Johannesburg. The name —
+          derived from Sesotho — carries the meaning of <strong>hope</strong>, and hope is
+          exactly what this community embodies every single day.
+        </p>
+        <p>
+          From its founding as a residential township, Tshepisong has grown into a
+          vibrant, self-sustaining community of families, entrepreneurs, learners,
+          faith communities and leaders. Our streets are alive with the sound of
+          children, music, and business.
+        </p>
+        <p>
+          This website is a digital home — a place where our community can be seen,
+          celebrated, and connected. We believe Tshepisong deserves to be on the map,
+          and this is our first step in making that happen.
+        </p>
+        <a class="btn btn-secondary" style="margin-top:1.25rem" routerLink="/spotlight">
+          Explore Our Community →
+        </a>
+      </div>
+
+      <div class="story-photo" aria-label="Aerial view of Tshepisong" role="img">
+        <span class="photo-emoji" aria-hidden="true">🏘️</span>
+        <div class="photo-caption">Tshepisong · Roodepoort · Johannesburg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEY FACTS ── -->
+<section class="facts-band">
+  <div class="container">
+    <app-section-header
+      eyebrow="Key Facts"
+      title="Tshepisong at a Glance"
+      [onDark]="true"
+    />
+    <div class="facts-grid">
+      @for (fact of facts; track fact.label) {
+        <div class="fact-card">
+          <div class="fact-num">{{ fact.num }}</div>
+          <div class="fact-label">{{ fact.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMUNITY VALUES ── -->
+<section class="section-pad">
+  <div class="container">
+    <app-section-header
+      eyebrow="What We Stand For"
+      title="Our Community Values"
+      subtitle="The principles that unite and define the people of Tshepisong."
+      [centered]="true"
+    />
+    <div class="values-grid">
+      @for (val of values; track val.title) {
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">{{ val.emoji }}</div>
+          <h3 class="value-title">{{ val.title }}</h3>
+          <p class="value-desc">{{ val.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO GALLERY ── -->
+<section class="section-pad section-light">
+  <div class="container">
+    <app-section-header
+      eyebrow="Our Community in Photos"
+      title="A Glimpse of Tshepisong"
+      subtitle="Real places, real people, real pride."
+    />
+    <div class="gallery-grid">
+      @for (item of gallery; track item.label; let i = $index) {
+        <div
+          class="gallery-item"
+          [class.gallery-item--wide]="i === 0"
+          [style.background]="item.bg"
+          [attr.aria-label]="item.label"
+          role="img">
+          <span class="gallery-emoji" aria-hidden="true">{{ item.emoji }}</span>
+        </div>
+      }
+    </div>
+    <p class="gallery-note">
+      📸 Have a photo of Tshepisong to share?
+      <a routerLink="/contact">Send it to us</a> and we'll add it to the gallery.
+    </p>
+  </div>
+</section>
+
+<!-- ── CONTRIBUTE CTA ── -->
+<section class="contribute-band">
+  <div class="contribute-inner">
+    <span class="sec-eyebrow">Your Stories Matter</span>
+    <h2>Share Your Tshepisong Story</h2>
+    <p>
+      Do you have a memory, photo, or story about our community?
+      This website belongs to all of us — let's build it together.
+    </p>
+    <a class="btn btn-primary" routerLink="/contact">Share Your Story →</a>
+  </div>
+</section>

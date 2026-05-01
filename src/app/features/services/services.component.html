@@ -1,0 +1,143 @@
+<!-- ── HERO ── -->
+<section class="page-hero">
+  <div class="hero-bg"><div class="hero-pattern"></div><div class="hero-circles"></div></div>
+  <div class="hero-content">
+    <div class="hero-badge">Area Services</div>
+    <h1>Everything You Need —<br>Right Here in <em>Tshepisong.</em></h1>
+    <p>Find healthcare, education, government offices, transport routes and emergency contacts.</p>
+  </div>
+</section>
+
+<div class="section-pad">
+  <div class="container">
+
+    <!-- ── CATEGORY QUICK LINKS ── -->
+    <app-section-header
+      eyebrow="Quick Navigation"
+      title="Service Categories"
+      subtitle="Tap a category to jump straight to the information you need."
+    />
+
+    <div class="categories-grid">
+      @for (cat of categories; track cat.id) {
+        <a class="cat-card" [href]="cat.anchor" [attr.aria-label]="cat.name">
+          <span class="cat-emoji" aria-hidden="true">{{ cat.emoji }}</span>
+          <span class="cat-name">{{ cat.name }}</span>
+        </a>
+      }
+    </div>
+
+    <hr class="divider" style="margin: 3rem 0">
+
+    <!-- ── HEALTH ── -->
+    <section id="health" aria-labelledby="health-title">
+      <app-section-header
+        eyebrow="Health"
+        title="Clinics & Healthcare"
+        subtitle="Medical services available in and near Tshepisong."
+      />
+      <div class="service-cards">
+        @for (svc of healthServices; track svc.name) {
+          <div class="service-card">
+            <div class="svc-logo">{{ svc.emoji }}</div>
+            <div class="svc-body">
+              <div class="svc-type">{{ svc.type }}</div>
+              <h3 class="svc-name">{{ svc.name }}</h3>
+              <p class="svc-desc">{{ svc.desc }}</p>
+              @if (svc.hours) {
+                <div class="svc-meta">🕐 {{ svc.hours }}</div>
+              }
+            </div>
+            <div class="svc-actions">
+              <a class="btn btn-secondary" [href]="'tel:' + svc.phone">📞 {{ svc.phone }}</a>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── EMERGENCY ── -->
+    <section id="emergency" aria-labelledby="emergency-title">
+      <app-section-header
+        eyebrow="Emergency"
+        title="Save These Numbers"
+        subtitle="Emergency contacts for Tshepisong and surrounding Roodepoort area."
+      />
+      <div class="emergency-card" role="complementary" aria-label="Emergency contacts">
+        <div class="emergency-header">
+          <span class="emergency-label">⚠️ Emergency Contacts — Available 24/7</span>
+        </div>
+        <div class="emergency-grid">
+          @for (emg of emergency; track emg.num) {
+            <a class="emg-item" [href]="'tel:' + emg.tel" [attr.aria-label]="emg.label + ' ' + emg.num">
+              <div class="emg-num">{{ emg.num }}</div>
+              <div class="emg-label">{{ emg.label }}</div>
+            </a>
+          }
+        </div>
+        <p class="emergency-note">
+          Tap any number to call directly from your phone.
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── TRANSPORT ── -->
+    <section id="transport" aria-labelledby="transport-title">
+      <app-section-header
+        eyebrow="Getting Around"
+        title="Transport Options"
+        subtitle="How to get to and from Tshepisong."
+      />
+      <div class="transport-grid">
+        @for (t of transportItems; track t.title) {
+          <div class="transport-card">
+            <div class="transport-icon" aria-hidden="true">{{ t.emoji }}</div>
+            <h3 class="transport-title">{{ t.title }}</h3>
+            <p class="transport-desc">{{ t.desc }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── EDUCATION SECTION ── -->
+    <section id="education" aria-labelledby="education-title">
+      <app-section-header
+        eyebrow="Education"
+        title="Schools & Learning"
+        subtitle="Education services serving the people of Tshepisong."
+      />
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-icon">🏫</div>
+          <h3>Schools in Tshepisong</h3>
+          <p>The area is served by multiple public schools from ECD (Grade R) through to secondary level. See our Community Spotlight for the full list.</p>
+          <a class="btn btn-ghost" routerLink="/spotlight" [queryParams]="{cat:'school'}">View All Schools →</a>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📖</div>
+          <h3>Adult Learning & ABET</h3>
+          <p>Adult Basic Education and Training (ABET) programmes are available for residents who want to improve literacy and numeracy skills.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🎓</div>
+          <h3>NSFAS & Bursaries</h3>
+          <p>Qualifying learners can apply for NSFAS funding for tertiary education. Visit the NSFAS website or contact your school guidance counsellor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SUGGEST CTA ── -->
+    <div class="suggest-band">
+      <h3>Know a service that should be listed here?</h3>
+      <p>Help us make this page more useful for every resident in Tshepisong.</p>
+      <a class="btn btn-primary" routerLink="/contact">Suggest a Service →</a>
+    </div>
+
+  </div>
+</div>
