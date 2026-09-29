@@ -16,7 +16,7 @@ export interface Place {
   description: string;
   longDescription?: string;
   imageUrl: string;
-  emoji: string;
+  // emoji: string;
   hours?: string;
   address?: string;
   contact?: string;
@@ -38,6 +38,7 @@ export interface Business {
   category: BusinessCategory;
   categoryLabel: string;
   description: string;
+  imageUrl: string;
   emoji: string;
   logoUrl?: string;
   phone: string;

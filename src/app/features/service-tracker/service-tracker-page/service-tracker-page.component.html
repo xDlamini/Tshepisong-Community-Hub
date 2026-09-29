@@ -1,0 +1,142 @@
+<!-- ── PAGE HERO ── -->
+<section class="page-hero" aria-label="Service Delivery Tracker">
+  <div class="hero-bg">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-circles" aria-hidden="true"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Community Accountability</div>
+    <h1>Service Delivery<br /><em>Tracker.</em></h1>
+    <p>
+      Log service delivery issues in Tshepisong publicly. Every report is
+      visible to the community and the ward office. Together we hold service
+      providers accountable.
+    </p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" (click)="scrollToList()">
+        View Logged Issues
+      </button>
+      <a class="btn btn-outline" routerLink="/contact"> Contact Ward Office </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num" aria-hidden="true">1</div>
+        <div class="step-text">
+          <strong>Log the Issue</strong>
+          <p>Submit a report with the issue type, area, and description.</p>
+        </div>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">2</div>
+        <div class="step-text">
+          <strong>Goes Public</strong>
+          <p>
+            The issue appears on the public tracker so the whole community can
+            see it.
+          </p>
+        </div>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">3</div>
+        <div class="step-text">
+          <strong>Status Updated</strong>
+          <p>
+            The ward office updates the status as the issue is acknowledged and
+            actioned.
+          </p>
+        </div>
+      </div>
+      <div class="step-arrow" aria-hidden="true">→</div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">4</div>
+        <div class="step-text">
+          <strong>Marked Resolved</strong>
+          <p>
+            Once fixed, the issue is marked resolved — publicly, on the record.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REPORT FORM ── -->
+<section class="section-pad" aria-labelledby="form-title">
+  <div class="container">
+    <div class="two-col-layout">
+      <div class="form-side">
+        <div class="section-header">
+          <span class="eyebrow">Report an Issue</span>
+          <h2 id="form-title">Log a Service Delivery Problem</h2>
+          <p class="section-sub">
+            Your report will be publicly logged and assigned a reference number.
+            Be as specific as possible so it can be acted on.
+          </p>
+        </div>
+        <app-report-issue-form (issueSubmitted)="scrollToList()" />
+      </div>
+
+      <aside class="info-side" aria-label="Important information">
+        <div class="info-card">
+          <h3>Before You Submit</h3>
+          <ul class="info-list">
+            <li>
+              For <strong>life-threatening emergencies</strong>, call 10111
+              (Police) or 10177 (Ambulance) first.
+            </li>
+            <li>
+              For <strong>CityPower power faults</strong>, also call
+              <a href="tel:0860037566">0860 037 566</a>.
+            </li>
+            <li>
+              For <strong>Joburg Water</strong>, also call
+              <a href="tel:0800002587">0800 002 587</a>.
+            </li>
+            <li>
+              This tracker is a community accountability tool, not an emergency
+              line.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card info-card--councillor">
+          <h3>Ward Councillor Contact</h3>
+          <p>
+            For urgent ward-level escalations, contact the ward councillor
+            directly.
+          </p>
+          <a class="btn-councillor" href="tel:0110001001">
+            Call Ward Councillor
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── ISSUES PUBLIC LOG ── -->
+<section
+  class="section-pad section-light"
+  id="issues-log"
+  aria-labelledby="log-title"
+>
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Public Record</span>
+      <h2 id="log-title">Community Issues Log</h2>
+      <p class="section-sub">
+        All issues logged by Tshepisong residents. Statuses are updated by the
+        ward office and community administrators.
+      </p>
+    </div>
+    <app-issues-list />
+  </div>
+</section>

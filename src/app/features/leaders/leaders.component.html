@@ -1,0 +1,124 @@
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Community Leaders of Tshepisong">
+  <div class="hero-bg">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-circles" aria-hidden="true"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">People of Tshepisong</div>
+    <h1>Community Leaders<br /><em>Who Serve Us All.</em></h1>
+    <p>
+      Meet the dedicated individuals who give their time, skills, and energy to
+      make Tshepisong a better place for every resident.
+    </p>
+  </div>
+</section>
+
+<!-- LEADERS GRID -->
+<section class="section-pad" aria-labelledby="leaders-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Representatives</span>
+      <h2 id="leaders-title">Community Leaders of Tshepisong</h2>
+      <p class="section-sub">
+        These leaders represent, serve, and uplift the people of Tshepisong
+        across every area of community life.
+      </p>
+    </div>
+
+    <div class="leaders-grid">
+      @for (leader of leaders(); track leader.id) {
+        <article
+          class="leader-card"
+          [attr.aria-label]="leader.name + ', ' + leader.role"
+        >
+          <div class="leader-img-wrap">
+            <img
+              class="leader-img"
+              [src]="leader.image"
+              [attr.alt]="leader.name + ' — ' + leader.role"
+            />
+          </div>
+
+          <div class="leader-body">
+            <span class="leader-role">{{ leader.role }}</span>
+            <h3 class="leader-name">{{ leader.name }}</h3>
+            <p class="leader-desc">{{ leader.description }}</p>
+            @if (leader.quote) {
+              <blockquote class="leader-quote">"{{ leader.quote }}"</blockquote>
+            }
+          </div>
+
+          <div class="leader-actions">
+            <a
+              class="leader-btn leader-btn--primary"
+              [href]="buildTel(leader.phone)"
+              [attr.aria-label]="'Call ' + leader.name"
+            >
+              Call {{ leader.phone }}
+            </a>
+
+            @if (leader.whatsapp) {
+              <a
+                class="leader-btn leader-btn--whatsapp"
+                [href]="buildWhatsApp(leader.whatsapp)"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'WhatsApp ' + leader.name"
+              >
+                WhatsApp
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- MEN IN ACTION -->
+<section class="spotlight-band" aria-labelledby="men-in-action-title">
+  <div class="container">
+    <div class="spotlight-inner">
+      <div class="spotlight-text">
+        <span class="eyebrow eyebrow--gold">Community Group</span>
+        <h2 id="men-in-action-title">Men in Action</h2>
+        <p>
+          Men in Action is a grassroots community group of committed men from
+          Tshepisong who volunteer their time to uplift the neighbourhood.
+        </p>
+
+        <div class="spotlight-actions">
+          <a
+            class="btn btn-primary"
+            routerLink="/contact"
+            aria-label="Join the Men in Action community group"
+          >
+            Join Men in Action
+          </a>
+        </div>
+      </div>
+
+      <div class="spotlight-photo-wrap">
+        <img
+          class="spotlight-photo"
+          src="assets/images/men-in-action.jpg"
+          alt="Men in Action community group — Tshepisong"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="cta-inner">
+    <span class="eyebrow eyebrow--gold">Be Part of This</span>
+    <h2 id="cta-title">Know a Leader We Should Feature?</h2>
+    <p>
+      If there is someone in Tshepisong who serves the community and deserves
+      recognition, let us know and we will add them to this page.
+    </p>
+    <a class="btn btn-primary" routerLink="/contact">Suggest a Leader</a>
+  </div>
+</section>

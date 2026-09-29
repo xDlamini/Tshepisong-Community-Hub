@@ -1,0 +1,125 @@
+// src/app/shared/components/audience-selector/audience-selector.component.css
+
+.audience-selector {
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--color-light);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+.audience-selector h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink);
+}
+
+.audience-sub {
+  font-size: 15px;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.audience-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.audience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card--kiddies {
+  background: linear-gradient(135deg, #fffbe6, #fff3cd);
+  border-color: #f5cc5a;
+}
+
+.card--kiddies:hover {
+  border-color: #d4a017;
+}
+
+.card--youth {
+  background: linear-gradient(135deg, #e8f4fd, #cce5ff);
+  border-color: #7ab8f5;
+}
+
+.card--youth:hover {
+  border-color: #1a4f8a;
+}
+
+.card--adults {
+  background: linear-gradient(135deg, #e1f0e8, #c8e6d4);
+  border-color: #7abf99;
+}
+
+.card--adults:hover {
+  border-color: var(--color-primary);
+}
+
+.audience-icon {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.audience-label {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+.audience-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.audience-arrow {
+  font-size: 18px;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+  transition: transform var(--transition-fast);
+}
+
+.audience-card:hover .audience-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 700px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}

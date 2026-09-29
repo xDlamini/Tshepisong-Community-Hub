@@ -1,0 +1,100 @@
+@if (submitted) {
+  <div class="form-success" role="alert">
+    <div class="success-icon" aria-hidden="true">✔</div>
+    <div class="success-text">
+      <strong>Issue logged successfully.</strong>
+      <p>
+        Your report is now publicly visible on the tracker below. Reference
+        number assigned automatically.
+      </p>
+    </div>
+    <button class="btn-reset" (click)="resetForm()">Log Another Issue</button>
+  </div>
+} @else {
+  <form
+    class="issue-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    aria-label="Report a service delivery issue"
+  >
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="issueType">Issue Type *</label>
+        <select
+          id="issueType"
+          class="form-select"
+          formControlName="type"
+          [class.invalid]="isInvalid('type')"
+        >
+          <option value="">Select issue type...</option>
+          @for (opt of typeOptions; track opt.value) {
+            <option [value]="opt.value">{{ opt.label }}</option>
+          }
+        </select>
+        @if (isInvalid("type")) {
+          <span class="form-error">Please select an issue type</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="issueArea">Street / Area *</label>
+        <input
+          id="issueArea"
+          class="form-input"
+          formControlName="area"
+          type="text"
+          placeholder="e.g. Main Road, Extension 4"
+          [class.invalid]="isInvalid('area')"
+        />
+        @if (isInvalid("area")) {
+          <span class="form-error">Please enter the street or area</span>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="issueDesc">Description *</label>
+      <textarea
+        id="issueDesc"
+        class="form-textarea"
+        formControlName="description"
+        rows="4"
+        placeholder="Describe the issue clearly. What is happening? How long has it been going on? Who is affected?"
+        [class.invalid]="isInvalid('description')"
+      ></textarea>
+      @if (isInvalid("description")) {
+        <span class="form-error"
+          >Please provide a description of at least 20 characters</span
+        >
+      }
+    </div>
+
+    <div class="form-group form-group--half">
+      <label class="form-label" for="issueTime">When Did It Start *</label>
+      <input
+        id="issueTime"
+        class="form-input"
+        formControlName="timeStarted"
+        type="datetime-local"
+        [class.invalid]="isInvalid('timeStarted')"
+      />
+      @if (isInvalid("timeStarted")) {
+        <span class="form-error"
+          >Please select the date and time this started</span
+        >
+      }
+    </div>
+
+    <div class="form-note">
+      <span aria-hidden="true">📋</span>
+      Your issue will be publicly logged with a reference number and a status of
+      <strong>Submitted</strong>. The ward office and community administrators
+      will be notified.
+    </div>
+
+    <button type="submit" class="btn-submit" [disabled]="submitting">
+      {{ submitting ? "Submitting..." : "Submit Issue Report" }}
+    </button>
+  </form>
+}

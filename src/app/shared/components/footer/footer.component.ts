@@ -32,6 +32,8 @@ import { RouterLink } from '@angular/router';
             <a class="footer-link" routerLink="/businesses">Local Businesses</a>
             <a class="footer-link" routerLink="/services">Services</a>
             <a class="footer-link" routerLink="/contact">Get Involved</a>
+            <a class="footer-link" routerLink="/leaders">Community Leaders</a>
+            <a class="footer-link" routerLink="/service-tracker">Service Delivery Tracker</a>
           </div>
 
           <!-- Community -->
@@ -65,4 +67,4 @@ import { RouterLink } from '@angular/router';
   `,
   styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent {}
+export class FooterComponent { }

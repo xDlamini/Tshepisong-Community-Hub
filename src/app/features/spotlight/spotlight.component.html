@@ -1,17 +1,21 @@
 <!-- Page Hero -->
 <section class="page-hero">
-  <div class="hero-bg"><div class="hero-pattern"></div><div class="hero-circles"></div></div>
+  <div class="hero-bg">
+    <div class="hero-pattern"></div>
+    <div class="hero-circles"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">Community Spotlight</div>
-    <h1>Our Spaces.<br><em>Our Places.</em></h1>
-    <p>Everything that makes Tshepisong a great place to live, learn and grow.</p>
+    <h1>Our Spaces.<br /><em>Our Places.</em></h1>
+    <p>
+      Everything that makes Tshepisong a great place to live, learn and grow.
+    </p>
   </div>
 </section>
 
 <!-- Main Content -->
 <div class="section-pad">
   <div class="container">
-
     <!-- Filter Bar -->
     <app-filter-bar
       [options]="filterOptions"
@@ -22,19 +26,16 @@
 
     <!-- Place Count -->
     <p class="result-count">
-      Showing <strong>{{ filteredPlaces().length }}</strong> place{{ filteredPlaces().length !== 1 ? 's' : '' }}
+      Showing <strong>{{ filteredPlaces().length }}</strong> place{{
+        filteredPlaces().length !== 1 ? "s" : ""
+      }}
     </p>
 
     <!-- Cards Grid -->
     <div class="places-grid">
       @for (place of filteredPlaces(); track place.id) {
-        <app-place-card
-          [place]="place"
-          (view)="openDetail($event)"
-        />
-      }
-
-      @empty {
+        <app-place-card [place]="place" (view)="openDetail($event)" />
+      } @empty {
         <div class="empty-state">
           <span class="empty-emoji">🔍</span>
           <p>No places found in this category yet.</p>
@@ -47,16 +48,27 @@
       <p>Know a place in Tshepisong that should be listed here?</p>
       <a class="btn btn-secondary" routerLink="/contact">Suggest a Place →</a>
     </div>
-
   </div>
 </div>
 
 <!-- Detail Modal -->
 @if (selectedPlace(); as place) {
   <div class="modal-backdrop" (click)="closeDetail()" aria-hidden="true"></div>
-  <div class="modal" role="dialog" [attr.aria-label]="'Details for ' + place.name">
-    <button class="modal-close" (click)="closeDetail()" aria-label="Close details">✕</button>
-    <div class="modal-img" [attr.aria-hidden]="true">{{ place.emoji }}</div>
+  <div
+    class="modal"
+    role="dialog"
+    [attr.aria-label]="'Details for ' + place.name"
+  >
+    <button
+      class="modal-close"
+      (click)="closeDetail()"
+      aria-label="Close details"
+    >
+      ✕
+    </button>
+    <div class="modal-img" [attr.aria-hidden]="true">
+      {{ place.imageUrl }}
+    </div>
     <div class="modal-body">
       <h2 class="modal-title">{{ place.name }}</h2>
       <p class="modal-desc">{{ place.longDescription || place.description }}</p>
@@ -64,7 +76,9 @@
         <div class="modal-meta"><strong>Hours:</strong> {{ place.hours }}</div>
       }
       @if (place.address) {
-        <div class="modal-meta"><strong>Address:</strong> {{ place.address }}</div>
+        <div class="modal-meta">
+          <strong>Address:</strong> {{ place.address }}
+        </div>
       }
       @if (place.contact) {
         <div class="modal-meta">
@@ -74,10 +88,12 @@
       }
       <div class="modal-actions">
         @if (place.address) {
-          <a class="btn btn-secondary"
-             [href]="'https://maps.google.com/?q=' + place.address"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="btn btn-secondary"
+            [href]="'https://maps.google.com/?q=' + place.address"
+            target="_blank"
+            rel="noopener"
+          >
             📍 Get Directions
           </a>
         }

@@ -51,18 +51,18 @@
       @for (h of highlights; track h.name) {
         <a
           class="highlight-card"
-          [routerLink]="['/spotlight']"
-          [queryParams]="{ cat: h.filter }"
+          [routerLink]="h.filter"
           [style.background]="h.bg"
           [attr.aria-label]="'Explore ' + h.name"
         >
           <div class="hc-overlay" aria-hidden="true"></div>
-          <div class="hc-emoji" aria-hidden="true">{{ h.emoji }}</div>
+
           <div class="hc-body">
             <span class="hc-badge">{{ h.badge }}</span>
             <h3 class="hc-name">{{ h.name }}</h3>
             <p class="hc-desc">{{ h.desc }}</p>
           </div>
+
           <span class="hc-arrow" aria-hidden="true">→</span>
         </a>
       }

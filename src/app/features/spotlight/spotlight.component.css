@@ -1,3 +1,17 @@
+.spotlight-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spotlight-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 /* Re-use hero pattern from home */
 .page-hero {
   position: relative;
@@ -220,3 +234,4 @@
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
+

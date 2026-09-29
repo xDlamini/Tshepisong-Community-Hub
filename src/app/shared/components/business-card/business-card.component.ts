@@ -8,7 +8,13 @@ import { ContactService } from '../../../core/services/notices.service';
   template: `
     <article class="biz-card">
       <div class="biz-top">
-        <div class="biz-logo" aria-hidden="true">{{ business.emoji }}</div>
+<div class="biz-image">
+  <img
+    [src]="business.imageUrl"
+    [alt]="business.name"
+    loading="lazy"
+  />
+</div>
         <div class="biz-meta">
           @if (business.isFeatured) {
             <span class="featured-badge">⭐ Featured</span>

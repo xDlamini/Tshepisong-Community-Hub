@@ -1,0 +1,206 @@
+/* ── STATS ROW ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.stat-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.stat-card--submitted    .stat-num { color: #1a4f8a; }
+.stat-card--acknowledged .stat-num { color: #8a5a0a; }
+.stat-card--progress     .stat-num { color: #7a2a7a; }
+.stat-card--resolved     .stat-num { color: var(--color-primary); }
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-ink);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  font-weight: 500;
+}
+
+.result-count {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+/* ── ISSUE CARDS ── */
+.issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.issue-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow var(--transition-fast);
+}
+
+.issue-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── CARD HEADER ── */
+.issue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.issue-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.issue-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── TYPE BADGES ── */
+.type-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.type-electricity  { background: #fff3cd; color: #856404; }
+.type-water        { background: #cce5ff; color: #004085; }
+.type-roads        { background: #e2e3e5; color: #383d41; }
+.type-streetlights { background: #fff3cd; color: #664d03; }
+.type-safety       { background: #f8d7da; color: #721c24; }
+.type-parks        { background: #d4edda; color: #155724; }
+
+/* ── STATUS BADGES ── */
+.status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.status-submitted    { background: #e3edf8; color: #1a3f72; }
+.status-acknowledged { background: #fff3cd; color: #856404; }
+.status-in-progress  { background: #f0e8f5; color: #5a1a72; }
+.status-resolved     { background: #d4edda; color: #155724; }
+
+/* ── CARD BODY ── */
+.issue-area {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.issue-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin-right: 4px;
+}
+
+.issue-desc {
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ── CARD FOOTER ── */
+.issue-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.6rem;
+}
+
+.issue-date {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .issue-card { padding: 1rem; }
+}

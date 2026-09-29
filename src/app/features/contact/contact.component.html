@@ -1,15 +1,17 @@
 <section class="page-hero">
-  <div class="hero-bg"><div class="hero-pattern"></div><div class="hero-circles"></div></div>
+  <div class="hero-bg">
+    <div class="hero-pattern"></div>
+    <div class="hero-circles"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">Get Involved</div>
-    <h1>This Is Your Website.<br><em>Get Involved.</em></h1>
+    <h1>This Is Your Website.<br /><em>Get Involved.</em></h1>
     <p>List your business, share a story, or just say hello.</p>
   </div>
 </section>
 
 <div class="section-pad">
   <div class="container">
-
     @if (submitted()) {
       <div class="success-banner" role="alert">
         <span class="success-icon">✅</span>
@@ -22,7 +24,11 @@
 
     <!-- Choice Cards -->
     <div class="choice-grid">
-      <a class="choice-card" href="#list-business" aria-label="List My Business">
+      <a
+        class="choice-card"
+        href="#list-business"
+        aria-label="List My Business"
+      >
         <span class="choice-icon">🏪</span>
         <h3>List My Business</h3>
         <p>Get visible to hundreds of residents — free</p>
@@ -39,10 +45,9 @@
       </a>
     </div>
 
-    <hr class="divider">
+    <hr class="divider" />
 
     <div class="contact-layout">
-
       <!-- ── BUSINESS LISTING FORM ── -->
       <section id="list-business" aria-labelledby="biz-form-title">
         <app-section-header
@@ -51,24 +56,43 @@
           subtitle="Fill in the form below. We'll have your business listed within 3 working days."
         />
 
-        <form [formGroup]="businessForm" (ngSubmit)="onSubmitBusiness()" novalidate>
-
+        <form
+          [formGroup]="businessForm"
+          (ngSubmit)="onSubmitBusiness()"
+          novalidate
+        >
           <div class="form-group">
             <label class="form-label" for="businessName">Business Name *</label>
-            <input id="businessName" class="form-input"
+            <input
+              id="businessName"
+              class="form-input"
               formControlName="businessName"
               type="text"
               placeholder="e.g. Mama Zinhle's Hair Salon"
-              [class.invalid]="businessForm.get('businessName')?.invalid && businessForm.get('businessName')?.touched">
-            @if (businessForm.get('businessName')?.invalid && businessForm.get('businessName')?.touched) {
+              [class.invalid]="
+                businessForm.get('businessName')?.invalid &&
+                businessForm.get('businessName')?.touched
+              "
+            />
+            @if (
+              businessForm.get("businessName")?.invalid &&
+              businessForm.get("businessName")?.touched
+            ) {
               <span class="form-error">Business name is required</span>
             }
           </div>
 
           <div class="form-group">
             <label class="form-label" for="category">Category *</label>
-            <select id="category" class="form-select" formControlName="category"
-              [class.invalid]="businessForm.get('category')?.invalid && businessForm.get('category')?.touched">
+            <select
+              id="category"
+              class="form-select"
+              formControlName="category"
+              [class.invalid]="
+                businessForm.get('category')?.invalid &&
+                businessForm.get('category')?.touched
+              "
+            >
               <option value="">Select a category...</option>
               @for (cat of categories; track cat) {
                 <option [value]="cat">{{ cat }}</option>
@@ -77,47 +101,93 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="description">Short Description * (max 200 chars)</label>
-            <textarea id="description" class="form-textarea"
+            <label class="form-label" for="description"
+              >Short Description * (max 200 chars)</label
+            >
+            <textarea
+              id="description"
+              class="form-textarea"
               formControlName="description"
               rows="3"
               placeholder="Describe what your business offers in 1–2 sentences..."
-              [class.invalid]="businessForm.get('description')?.invalid && businessForm.get('description')?.touched">
+              [class.invalid]="
+                businessForm.get('description')?.invalid &&
+                businessForm.get('description')?.touched
+              "
+            >
             </textarea>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="phone">Phone Number *</label>
-              <input id="phone" class="form-input" formControlName="phone"
-                type="tel" placeholder="e.g. 072 123 4567"
-                [class.invalid]="businessForm.get('phone')?.invalid && businessForm.get('phone')?.touched">
+              <input
+                id="phone"
+                class="form-input"
+                formControlName="phone"
+                type="tel"
+                placeholder="e.g. 072 123 4567"
+                [class.invalid]="
+                  businessForm.get('phone')?.invalid &&
+                  businessForm.get('phone')?.touched
+                "
+              />
             </div>
             <div class="form-group">
-              <label class="form-label" for="whatsapp">WhatsApp (optional)</label>
-              <input id="whatsapp" class="form-input" formControlName="whatsapp"
-                type="tel" placeholder="e.g. 072 123 4567">
+              <label class="form-label" for="whatsapp"
+                >WhatsApp (optional)</label
+              >
+              <input
+                id="whatsapp"
+                class="form-input"
+                formControlName="whatsapp"
+                type="tel"
+                placeholder="e.g. 072 123 4567"
+              />
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="address">Address in Tshepisong</label>
-            <input id="address" class="form-input" formControlName="address"
-              type="text" placeholder="Street or area name">
+            <label class="form-label" for="address"
+              >Address in Tshepisong</label
+            >
+            <input
+              id="address"
+              class="form-input"
+              formControlName="address"
+              type="text"
+              placeholder="Street or area name"
+            />
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="ownerName">Your Name *</label>
-              <input id="ownerName" class="form-input" formControlName="ownerName"
-                type="text" placeholder="Full name"
-                [class.invalid]="businessForm.get('ownerName')?.invalid && businessForm.get('ownerName')?.touched">
+              <input
+                id="ownerName"
+                class="form-input"
+                formControlName="ownerName"
+                type="text"
+                placeholder="Full name"
+                [class.invalid]="
+                  businessForm.get('ownerName')?.invalid &&
+                  businessForm.get('ownerName')?.touched
+                "
+              />
             </div>
             <div class="form-group">
               <label class="form-label" for="ownerEmail">Your Email *</label>
-              <input id="ownerEmail" class="form-input" formControlName="ownerEmail"
-                type="email" placeholder="name@email.com"
-                [class.invalid]="businessForm.get('ownerEmail')?.invalid && businessForm.get('ownerEmail')?.touched">
+              <input
+                id="ownerEmail"
+                class="form-input"
+                formControlName="ownerEmail"
+                type="email"
+                placeholder="name@email.com"
+                [class.invalid]="
+                  businessForm.get('ownerEmail')?.invalid &&
+                  businessForm.get('ownerEmail')?.touched
+                "
+              />
             </div>
           </div>
 
@@ -125,12 +195,17 @@
             <div class="form-error-box" role="alert">{{ submitError() }}</div>
           }
 
-          <button type="submit" class="btn btn-secondary form-submit" [disabled]="submitting()">
-            {{ submitting() ? 'Submitting...' : 'Submit My Business →' }}
+          <button
+            type="submit"
+            class="btn btn-secondary form-submit"
+            [disabled]="submitting()"
+          >
+            {{ submitting() ? "Submitting..." : "Submit My Business →" }}
           </button>
 
           <p class="form-note">
-            We review all submissions. Your details will only appear publicly once approved.
+            We review all submissions. Your details will only appear publicly
+            once approved.
           </p>
         </form>
       </section>
@@ -140,36 +215,41 @@
         <div class="contact-info-card">
           <h3>Connect With Us</h3>
           <p>
-            Got a question, a community story, or a suggestion?
-            We read every message and respond within 2 working days.
+            Got a question, a community story, or a suggestion? We read every
+            message and respond within 2 working days.
           </p>
           <div class="info-items">
             <div class="info-item">
               <div class="info-icon">📍</div>
               <div>
                 <strong>Location</strong>
-                <span>Tshepisong, Roodepoort<br>Johannesburg, Gauteng</span>
+                <span>Tshepisong, Roodepoort<br />Johannesburg, Gauteng</span>
               </div>
             </div>
             <div class="info-item">
               <div class="info-icon">📧</div>
               <div>
                 <strong>Email</strong>
-                <span>hello&#64;tshepisong.co.za</span>
+                <span>tshepisongdigitalhub&#64;gmail.com</span>
               </div>
             </div>
             <div class="info-item">
               <div class="info-icon">⏰</div>
               <div>
                 <strong>Response Time</strong>
-                <span>Within 2 working days</span>
+                <span>Within 3 working days</span>
               </div>
             </div>
           </div>
           <div class="social-links">
             <span class="social-label">Join us online</span>
             <div class="social-btns">
-              <a class="social-btn" href="#" target="_blank">📘 Facebook</a>
+              <a
+                class="social-btn"
+                href="#"
+                target="facebook.com/tshepisongdigitalhub"
+                >📘 Facebook</a
+              >
               <a class="social-btn" href="#" target="_blank">💬 WhatsApp</a>
               <a class="social-btn" href="#" target="_blank">📷 Instagram</a>
             </div>
@@ -178,32 +258,57 @@
 
         <!-- General Contact Form -->
         <section id="contact-form" aria-labelledby="contact-form-title">
-          <h3 id="contact-form-title" style="font-family:var(--font-display);margin:1.5rem 0 1rem">
+          <h3
+            id="contact-form-title"
+            style="font-family: var(--font-display); margin: 1.5rem 0 1rem"
+          >
             General Enquiry
           </h3>
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()" novalidate>
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmitContact()"
+            novalidate
+          >
             <div class="form-group">
               <label class="form-label" for="cName">Your Name *</label>
-              <input id="cName" class="form-input" formControlName="name"
-                type="text" placeholder="Full name">
+              <input
+                id="cName"
+                class="form-input"
+                formControlName="name"
+                type="text"
+                placeholder="Full name"
+              />
             </div>
             <div class="form-group">
               <label class="form-label" for="cEmail">Email *</label>
-              <input id="cEmail" class="form-input" formControlName="email"
-                type="email" placeholder="name@email.com">
+              <input
+                id="cEmail"
+                class="form-input"
+                formControlName="email"
+                type="email"
+                placeholder="name@email.com"
+              />
             </div>
             <div class="form-group">
               <label class="form-label" for="cMsg">Message *</label>
-              <textarea id="cMsg" class="form-textarea" formControlName="message"
-                rows="4" placeholder="What would you like to tell us?"></textarea>
+              <textarea
+                id="cMsg"
+                class="form-textarea"
+                formControlName="message"
+                rows="4"
+                placeholder="What would you like to tell us?"
+              ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary form-submit" [disabled]="submitting()">
-              {{ submitting() ? 'Sending...' : 'Send Message →' }}
+            <button
+              type="submit"
+              class="btn btn-primary form-submit"
+              [disabled]="submitting()"
+            >
+              {{ submitting() ? "Sending..." : "Send Message →" }}
             </button>
           </form>
         </section>
       </aside>
-
     </div>
   </div>
 </div>

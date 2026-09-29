@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { LeadersComponent } from './features/leaders/leaders.component';
+import { ServiceTrackerPageComponent } from './features/service-tracker/service-tracker-page/service-tracker-page.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +38,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/contact/contact.component').then(m => m.ContactComponent),
     title: 'Get Involved | Tshepisong Community Hub',
+  },
+  {
+    path: 'leaders', component: LeadersComponent
+  },
+  {
+    path: 'service-tracker', component: ServiceTrackerPageComponent
   },
   {
     path: '**',

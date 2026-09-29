@@ -1,0 +1,34 @@
+<div class="memory-game" aria-label="Memory Match Game">
+
+  @if (isComplete()) {
+    <div class="game-complete" role="alert">
+      <span class="complete-icon" aria-hidden="true">🎉</span>
+      <h3>Well Done!</h3>
+      <p>You matched all the cards in {{ moves() }} moves!</p>
+      <button class="btn-play-again" (click)="initGame()">Play Again</button>
+    </div>
+  }
+
+  <div class="memory-stats">
+    <span class="memory-stat">Moves: <strong>{{ moves() }}</strong></span>
+    <span class="memory-stat">Matched: <strong>{{ matchedCount() }}</strong> of <strong>{{ cards().length / 2 }}</strong></span>
+    <button class="btn-restart" (click)="initGame()">Restart</button>
+  </div>
+
+  <div class="memory-grid" role="list">
+    @for (card of cards(); track card.id) {
+      <button
+        class="memory-card"
+        [ngClass]="{ flipped: card.isFlipped || card.isMatched, matched: card.isMatched }"
+        (click)="flipCard(card)"
+        [attr.aria-label]="card.isFlipped || card.isMatched ? card.value : 'Hidden card'"
+        [attr.aria-pressed]="card.isFlipped"
+        role="listitem"
+      >
+        <span class="card-front" aria-hidden="true">{{ card.value }}</span>
+        <span class="card-back" aria-hidden="true">?</span>
+      </button>
+    }
+  </div>
+
+</div>

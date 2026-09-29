@@ -1,0 +1,89 @@
+<!-- Stats Row -->
+<div class="stats-row" aria-label="Issue statistics">
+  <div class="stat-card">
+    <span class="stat-num">{{ stats().total }}</span>
+    <span class="stat-lbl">Total Issues</span>
+  </div>
+  <div class="stat-card stat-card--submitted">
+    <span class="stat-num">{{ stats().submitted }}</span>
+    <span class="stat-lbl">Submitted</span>
+  </div>
+  <div class="stat-card stat-card--acknowledged">
+    <span class="stat-num">{{ stats().acknowledged }}</span>
+    <span class="stat-lbl">Acknowledged</span>
+  </div>
+  <div class="stat-card stat-card--progress">
+    <span class="stat-num">{{ stats().inProgress }}</span>
+    <span class="stat-lbl">In Progress</span>
+  </div>
+  <div class="stat-card stat-card--resolved">
+    <span class="stat-num">{{ stats().resolved }}</span>
+    <span class="stat-lbl">Resolved</span>
+  </div>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar" role="group" aria-label="Filter issues by type">
+  @for (opt of filterOptions; track opt.value) {
+    <button
+      class="filter-btn"
+      [class.active]="activeFilter() === opt.value"
+      [attr.aria-pressed]="activeFilter() === opt.value"
+      (click)="setFilter(opt.value)"
+    >
+      {{ opt.label }}
+    </button>
+  }
+</div>
+
+<!-- Result Count -->
+<p class="result-count">
+  Showing <strong>{{ filteredIssues().length }}</strong> issue{{
+    filteredIssues().length !== 1 ? "s" : ""
+  }}
+</p>
+
+<!-- Issues List -->
+<div
+  class="issues-list"
+  aria-live="polite"
+  aria-label="Logged community issues"
+>
+  @for (issue of filteredIssues(); track issue.id) {
+    <article
+      class="issue-card"
+      [attr.aria-label]="'Issue ' + issue.id + ': ' + typeLabels[issue.type]"
+    >
+      <div class="issue-header">
+        <div class="issue-header-left">
+          <span class="type-badge" [ngClass]="getTypeClass(issue.type)">
+            {{ typeLabels[issue.type] }}
+          </span>
+          <span class="issue-id">{{ issue.id }}</span>
+        </div>
+        <span class="status-badge" [ngClass]="getStatusClass(issue.status)">
+          {{ statusLabels[issue.status] }}
+        </span>
+      </div>
+
+      <div class="issue-body">
+        <div class="issue-area">
+          <span class="issue-meta-label">Area:</span>
+          {{ issue.area }}
+        </div>
+        <p class="issue-desc">{{ issue.description }}</p>
+      </div>
+
+      <div class="issue-footer">
+        <span class="issue-date">
+          Submitted: {{ formatDate(issue.dateSubmitted) }}
+        </span>
+      </div>
+    </article>
+
+  } @empty {
+    <div class="empty-state">
+      <p>No issues found for this category.</p>
+    </div>
+  }
+</div>

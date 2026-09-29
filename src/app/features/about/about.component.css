@@ -81,6 +81,23 @@
   text-align: center;
 }
 
+/* Images */
+.story-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* ── FACTS ── */
 .facts-band {
   background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));

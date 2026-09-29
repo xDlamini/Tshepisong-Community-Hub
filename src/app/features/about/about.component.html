@@ -1,10 +1,16 @@
 <!-- ── PAGE HERO ── -->
 <section class="page-hero">
-  <div class="hero-bg"><div class="hero-pattern"></div><div class="hero-circles"></div></div>
+  <div class="hero-bg">
+    <div class="hero-pattern"></div>
+    <div class="hero-circles"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">Our Story</div>
-    <h1>Tshepisong —<br>A Name That Means <em>Hope.</em></h1>
-    <p>A township west of Johannesburg, built on community, resilience, and the spirit of togetherness.</p>
+    <h1>Tshepisong —<br />A Name That Means <em>Hope.</em></h1>
+    <p>
+      A township west of Johannesburg, built on community, resilience, and the
+      spirit of togetherness.
+    </p>
   </div>
 </section>
 
@@ -19,27 +25,39 @@
         />
         <p>
           Tshepisong is located in Roodepoort, west of Johannesburg. The name —
-          derived from Sesotho — carries the meaning of <strong>hope</strong>, and hope is
-          exactly what this community embodies every single day.
+          derived from Sesotho — carries the meaning of <strong>hope</strong>,
+          and hope is exactly what this community embodies every single day.
         </p>
         <p>
-          From its founding as a residential township, Tshepisong has grown into a
-          vibrant, self-sustaining community of families, entrepreneurs, learners,
-          faith communities and leaders. Our streets are alive with the sound of
-          children, music, and business.
+          From its founding as a residential township, Tshepisong has grown into
+          a vibrant, self-sustaining community of families, entrepreneurs,
+          learners, faith communities and leaders. Our streets are alive with
+          the sound of children, music, and business.
         </p>
         <p>
-          This website is a digital home — a place where our community can be seen,
-          celebrated, and connected. We believe Tshepisong deserves to be on the map,
-          and this is our first step in making that happen.
+          This website is a digital home — a place where our community can be
+          seen, celebrated, and connected. We believe Tshepisong deserves to be
+          on the map, and this is our first step in making that happen.
         </p>
-        <a class="btn btn-secondary" style="margin-top:1.25rem" routerLink="/spotlight">
+        <a
+          class="btn btn-secondary"
+          style="margin-top: 1.25rem"
+          routerLink="/spotlight"
+        >
           Explore Our Community →
         </a>
       </div>
 
-      <div class="story-photo" aria-label="Aerial view of Tshepisong" role="img">
-        <span class="photo-emoji" aria-hidden="true">🏘️</span>
+      <div
+        class="story-photo"
+        aria-label="Aerial view of Tshepisong"
+        role="img"
+      >
+        <img
+          class="story-photo-img"
+          [attr.src]="'assets/images/park.jpg'"
+          [attr.alt]="'Tshepisong community — Roodepoort, Johannesburg'"
+        />
         <div class="photo-caption">Tshepisong · Roodepoort · Johannesburg</div>
       </div>
     </div>
@@ -94,21 +112,24 @@
       title="A Glimpse of Tshepisong"
       subtitle="Real places, real people, real pride."
     />
+
     <div class="gallery-grid">
-      @for (item of gallery; track item.label; let i = $index) {
+      @for (img of aboutImages; track img.id) {
         <div
           class="gallery-item"
-          [class.gallery-item--wide]="i === 0"
-          [style.background]="item.bg"
-          [attr.aria-label]="item.label"
-          role="img">
-          <span class="gallery-emoji" aria-hidden="true">{{ item.emoji }}</span>
+          [class.gallery-item--wide]="img.id === 1"
+          role="img"
+          [attr.aria-label]="img.alt"
+        >
+          <img class="gallery-img" [attr.src]="img.src" [attr.alt]="img.alt" />
         </div>
       }
     </div>
+
     <p class="gallery-note">
-      📸 Have a photo of Tshepisong to share?
-      <a routerLink="/contact">Send it to us</a> and we'll add it to the gallery.
+      📸 Have a photo of Tshepisong to share??
+      <a routerLink="/contact">Send it to us</a> and we'll add it to the
+      gallery.
     </p>
   </div>
 </section>
@@ -119,8 +140,8 @@
     <span class="sec-eyebrow">Your Stories Matter</span>
     <h2>Share Your Tshepisong Story</h2>
     <p>
-      Do you have a memory, photo, or story about our community?
-      This website belongs to all of us — let's build it together.
+      Do you have a memory, photo, or story about our community? This website
+      belongs to all of us — let's build it together.
     </p>
     <a class="btn btn-primary" routerLink="/contact">Share Your Story →</a>
   </div>

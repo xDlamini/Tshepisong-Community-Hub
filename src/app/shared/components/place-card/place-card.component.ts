@@ -3,23 +3,23 @@ import { NgClass } from '@angular/common';
 import { Place, PlaceCategory } from '../../../core/models/index';
 
 const CATEGORY_LABELS: Record<PlaceCategory, string> = {
-  park:    'Park',
-  school:  'School',
-  sports:  'Sports',
+  park: 'Park',
+  school: 'School',
+  sports: 'Sports',
   library: 'Library',
-  clinic:  'Clinic',
-  church:  'Church',
-  hall:    'Community Hall',
+  clinic: 'Clinic',
+  church: 'Church',
+  hall: 'Community Hall',
 };
 
 const CATEGORY_CLASSES: Record<PlaceCategory, string> = {
-  park:    'tag-park',
-  school:  'tag-school',
-  sports:  'tag-sports',
+  park: 'tag-park',
+  school: 'tag-school',
+  sports: 'tag-sports',
   library: 'tag-library',
-  clinic:  'tag-clinic',
-  church:  'tag-church',
-  hall:    'tag-hall',
+  clinic: 'tag-clinic',
+  church: 'tag-church',
+  hall: 'tag-hall',
 };
 
 @Component({
@@ -29,9 +29,14 @@ const CATEGORY_CLASSES: Record<PlaceCategory, string> = {
   template: `
     <article class="place-card" (click)="view.emit(place)" role="button" tabindex="0"
       (keydown.enter)="view.emit(place)" [attr.aria-label]="'View details for ' + place.name">
+      <!-- images remember -->
       <div class="place-img">
-        <span class="place-emoji" aria-hidden="true">{{ place.emoji }}</span>
-      </div>
+      <img
+        class="place-photo"
+        [src]="place.imageUrl"
+        [attr.alt]="place.name"
+      />
+    </div>
       <div class="place-body">
         <span class="place-tag" [ngClass]="tagClass">{{ categoryLabel }}</span>
         <h3 class="place-name">{{ place.name }}</h3>

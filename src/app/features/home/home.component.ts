@@ -13,23 +13,24 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  private bizSvc    = inject(BusinessesService);
+  private bizSvc = inject(BusinessesService);
   private noticeSvc = inject(NoticesService);
 
   featuredBusinesses = this.bizSvc.featuredBusinesses;
-  notices            = this.noticeSvc.notices;
+  notices = this.noticeSvc.notices;
 
   highlights = [
-    { emoji: '🌳', badge: 'Parks',    name: 'Community Parks',    desc: 'Open green spaces for all ages',             bg: 'linear-gradient(135deg,#1a4a1e,#2a6e30)', filter: 'park' },
-    { emoji: '🏫', badge: 'Schools',  name: 'Schools & Crèches',  desc: 'Quality education from ECD to matric',       bg: 'linear-gradient(135deg,#1a2e5a,#2a4a8e)', filter: 'school' },
-    { emoji: '⚽', badge: 'Sports',   name: 'Sports Grounds',     desc: 'Football, athletics & recreation',           bg: 'linear-gradient(135deg,#5a1a0a,#8e2a15)', filter: 'sports' },
-    { emoji: '📚', badge: 'Library',  name: 'Public Library',     desc: 'Books, internet & learning resources',       bg: 'linear-gradient(135deg,#4a3a0a,#7a5a15)', filter: 'library' },
+    { emoji: '🌳', badge: 'Parks', name: 'Community Parks', desc: 'Open green spaces for all ages', bg: 'linear-gradient(135deg,#1a4a1e,#2a6e30)', filter: 'park' },
+    { emoji: '🏫', badge: 'Schools', name: 'Schools & Crèches', desc: 'Quality education from ECD to matric', bg: 'linear-gradient(135deg,#1a2e5a,#2a4a8e)', filter: 'school' },
+    { emoji: '⚽', badge: 'Sports', name: 'Sports Grounds', desc: 'Football, athletics & recreation', bg: 'linear-gradient(135deg,#5a1a0a,#8e2a15)', filter: 'sports' },
+    { emoji: '📚', badge: 'Library', name: 'Public Library', desc: 'Books, internet & learning resources', bg: 'linear-gradient(135deg,#4a3a0a,#7a5a15)', filter: 'library' },
+    { emoji: null, badge: 'Leaders', name: 'Community Leaders', desc: 'Meet the people who serve Tshepisong', route: '/leaders' }
   ];
 
   stats = [
     { num: '5+', label: 'Schools' },
-    { num: '3',  label: 'Parks & Fields' },
-    { num: '50+',label: 'Local Businesses' },
-    { num: '1',  label: 'Community Library' },
+    { num: '3', label: 'Parks & Fields' },
+    { num: '50+', label: 'Local Businesses' },
+    { num: '1', label: 'Community Library' },
   ];
 }

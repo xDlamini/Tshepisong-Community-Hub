@@ -12,21 +12,21 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 export class ServicesComponent {
 
   categories = [
-    { id: 'health',    emoji: '🏥', name: 'Health & Clinics',    anchor: '#health' },
-    { id: 'education', emoji: '🏫', name: 'Education',           anchor: '#education' },
-    { id: 'govt',      emoji: '🏛️', name: 'Government',          anchor: '#govt' },
-    { id: 'transport', emoji: '🚌', name: 'Transport',           anchor: '#transport' },
-    { id: 'emergency', emoji: '🚨', name: 'Emergency',           anchor: '#emergency' },
-    { id: 'utilities', emoji: '⚡', name: 'Utilities',           anchor: '#utilities' },
+    { id: 'health', emoji: '🏥', name: 'Health & Clinics', anchor: '#health' },
+    { id: 'education', emoji: '🏫', name: 'Education', anchor: '#education' },
+    { id: 'govt', emoji: '🏛️', name: 'Government', anchor: '#govt' },
+    { id: 'transport', emoji: '🚌', name: 'Transport', anchor: '#transport' },
+    { id: 'emergency', emoji: '🚨', name: 'Emergency', anchor: '#emergency' },
+    { id: 'utilities', emoji: '⚡', name: 'Utilities', anchor: '#utilities' },
   ];
 
   emergency = [
-    { num: '10111',         label: '🚔 Police (SAPS)',           tel: '10111' },
-    { num: '10177',         label: '🚑 Ambulance (EMS)',         tel: '10177' },
-    { num: '011 375 5911',  label: '🚒 Fire & Rescue (CoJ)',     tel: '0113755911' },
-    { num: '0860 037 566',  label: '⚡ Eskom Faults',            tel: '0860037566' },
-    { num: '0800 002 587',  label: '💧 Joburg Water',            tel: '0800002587' },
-    { num: '080 000 4326',  label: '📞 Social Services (DSD)',   tel: '0800004326' },
+    { num: '10111', label: '🚔 Police (SAPS)', tel: '10111' },
+    { num: '10177', label: '🚑 Ambulance (EMS)', tel: '10177' },
+    { num: '011 375 5911', label: '🚒 Fire & Rescue (CoJ)', tel: '0113755911' },
+    { num: '0860 037 566', label: '⚡ CityPower', tel: '0860037566' },
+    { num: '0800 002 587', label: '💧 Joburg Water', tel: '0800002587' },
+    { num: '080 000 4326', label: '📞 Social Services (DSD)', tel: '0800004326' },
   ];
 
   healthServices = [
@@ -49,8 +49,8 @@ export class ServicesComponent {
   ];
 
   transportItems = [
-    { emoji: '🚐', title: 'Minibus Taxis',  desc: 'Routes to Roodepoort CBD, Park Station and Soweto run daily from the main taxi rank in Tshepisong.' },
-    { emoji: '🚌', title: 'Metrobus',        desc: 'Routes connecting Tshepisong to central Johannesburg. See the CoJ website for timetables and fares.' },
-    { emoji: '🚂', title: 'Metrorail Train', desc: 'Nearest station is Roodepoort. Trains run to Park Station, Soweto and other Gauteng destinations.' },
+    { emoji: '🚐', title: 'Minibus Taxis', desc: 'Routes to Roodepoort CBD, Park Station and Soweto run daily from the main taxi rank in Tshepisong.' },
+    { emoji: '🚌', title: 'Bus', desc: 'Routes connecting Tshepisong to central Johannesburg. See the CoJ website for timetables and fares.' },
+    { emoji: '🚂', title: 'In-drive/Uber/Bolt', desc: 'Nearest station is Roodepoort. Trains run to Park Station, Soweto and other Gauteng destinations.' },
   ];
 }
