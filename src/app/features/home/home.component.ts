@@ -24,12 +24,12 @@ export class HomeComponent {
     { emoji: '🏫', badge: 'Schools', name: 'Schools & Crèches', desc: 'Quality education from ECD to matric', bg: 'linear-gradient(135deg,#1a2e5a,#2a4a8e)', filter: 'school' },
     { emoji: '⚽', badge: 'Sports', name: 'Sports Grounds', desc: 'Football, athletics & recreation', bg: 'linear-gradient(135deg,#5a1a0a,#8e2a15)', filter: 'sports' },
     { emoji: '📚', badge: 'Library', name: 'Public Library', desc: 'Books, internet & learning resources', bg: 'linear-gradient(135deg,#4a3a0a,#7a5a15)', filter: 'library' },
-    { emoji: null, badge: 'Leaders', name: 'Community Leaders', desc: 'Meet the people who serve Tshepisong', route: '/leaders' }
+    { emoji: null, badge: 'Leaders', name: 'Community Leaders', desc: 'Meet the people who serve Tshepisong', route: 'leaders' }
   ];
 
   stats = [
     { num: '5+', label: 'Schools' },
-    { num: '3', label: 'Parks & Fields' },
+    { num: '7', label: 'Parks & Fields' },
     { num: '50+', label: 'Local Businesses' },
     { num: '1', label: 'Community Library' },
   ];

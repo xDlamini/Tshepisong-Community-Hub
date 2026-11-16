@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "tshepisong-community-hub"
-  }
+    "default": "tshepisong-hub"
+  },
+  "targets": {},
+  "etags": {}
 }

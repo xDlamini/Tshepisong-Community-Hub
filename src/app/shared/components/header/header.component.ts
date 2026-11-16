@@ -20,7 +20,7 @@ export class HeaderComponent {
   navItems: NavItem[] = [
     { label: 'Home', route: '/' },
     { label: 'About', route: '/about' },
-    { label: 'Spotlight', route: '/spotlight' },
+    { label: 'Places', route: '/spotlight' },
     { label: 'Businesses', route: '/businesses' },
     { label: 'Services', route: '/services' },
     { label: 'Get Involved', route: '/contact' },
