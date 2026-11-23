@@ -43,6 +43,13 @@ export const routes: Routes = [
     path: 'leaders', component: LeadersComponent
   },
   {
+    path: 'careers',
+    loadComponent: () =>
+      import('./features/youth/sections/careers/careers.component')
+        .then(m => m.CareersComponent),
+    title: 'Careers & Opportunities | Tshepisong Community Hub',
+  },
+  {
     path: 'service-tracker', component: ServiceTrackerPageComponent
   },
   {

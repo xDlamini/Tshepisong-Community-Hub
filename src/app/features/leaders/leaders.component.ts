@@ -60,8 +60,20 @@ export class LeadersComponent {
         'Community safety begins when neighbours know, trust, and look out for one another.'
     },
     {
+      id: ' library-manager',
+      name: 'Mr. Thabang Phonco',
+      role: 'Head of Community Voices & Profiles',
+      description:
+        'Leads the Local Heroes, sourcing, interviewing, and publishing stories of grassroots impacts. Dedicated to making sure no local legend goes unnoticed, puts the spotlight on the people driving positive change in our backyard.',
+      image: 'assets/images/about/thabang.jpg',
+      phone: '0785429836',
+      whatsapp: '27785429836',
+      quote:
+        'We dont have to look outside our neighborhood to find role models, THEY LIVE RIGHT NEXT DOOR.'
+    },
+    {
       id: 'teacher',
-      name: 'Mr. K. Tsiame',
+      name: 'Mr. K. Buthelezi',
       role: 'Teacher at Wiseman Cele High School',
       description:
         'Leads Wiseman Cele School learners with a focus on academic excellence, learner wellbeing, and strong community partnerships. In post for over 5+ years.',
@@ -82,18 +94,6 @@ export class LeadersComponent {
       whatsapp: '',
       quote:
         'Health is the first wealth of any community, and we must protect it together.'
-    },
-    {
-      id: 'library-manager',
-      name: 'Mr. D. Sithole',
-      role: 'Library Manager',
-      description:
-        'Manages the Tshepisong Public Library. Champion of literacy, youth reading programmes, and free internet access for all residents.',
-      image: 'assets/images/leader-library.jpg',
-      phone: '0110001005',
-      whatsapp: '27110001005',
-      quote:
-        'A library is where dreams begin for many young minds in our community.'
     },
     {
       id: 'forum-chair',

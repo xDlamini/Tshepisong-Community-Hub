@@ -22,6 +22,7 @@ export class HeaderComponent {
     { label: 'About', route: '/about' },
     { label: 'Places', route: '/spotlight' },
     { label: 'Businesses', route: '/businesses' },
+    { label: 'Opportunities', route: '/careers' },
     { label: 'Services', route: '/services' },
     { label: 'Get Involved', route: '/contact' },
     { label: 'Leaders', route: '/leaders' },
