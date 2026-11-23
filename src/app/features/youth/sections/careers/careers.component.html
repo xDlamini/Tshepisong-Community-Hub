@@ -170,19 +170,81 @@
       <span class="section-eyebrow">DISCOVER YOUR OPTIONS</span>
       <h2>Explore different career paths</h2>
       <p>
-        There are many ways to build a career. Explore industries that offer
-        different roles, skills and opportunities.
+        Not sure where to start? Explore different industries, discover possible
+        job roles and learn what skills you may need.
       </p>
     </div>
 
-    <!-- We will build the interactive career categories here next. -->
-    <div class="pathways-placeholder">
-      <p>
-        Career categories are coming next. We'll include opportunities across
-        retail, administration, technology, trades, hospitality, healthcare and
-        more.
-      </p>
+    <div class="career-explorer">
+      <!-- INDUSTRY SELECTOR -->
+      <div class="career-category-list">
+        @for (category of careerCategories; track category.id) {
+          <button
+            type="button"
+            class="career-category-button"
+            [class.active]="selectedCategory() === category.id"
+            [attr.aria-pressed]="selectedCategory() === category.id"
+            (click)="selectCategory(category.id)"
+          >
+            <span class="category-icon">{{ category.icon }}</span>
+            <span class="category-name">{{ category.name }}</span>
+            <span class="category-arrow">→</span>
+          </button>
+        }
+      </div>
+
+      <!-- SELECTED INDUSTRY DETAILS -->
+      @if (selectedCareer(); as career) {
+        <div class="career-details">
+          <div class="career-details-heading">
+            <span class="career-details-icon">{{ career.icon }}</span>
+
+            <div>
+              <span class="section-eyebrow">CAREER INDUSTRY</span>
+              <h3>{{ career.name }}</h3>
+              <p>{{ career.description }}</p>
+            </div>
+          </div>
+
+          <div class="career-detail-content">
+            <div class="career-detail-block">
+              <h4>Possible job roles</h4>
+
+              <div class="role-list">
+                @for (role of career.roles; track role) {
+                  <span class="role-chip">{{ role }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="career-detail-block">
+              <h4>Useful skills to develop</h4>
+
+              <ul class="skills-list">
+                @for (skill of career.skills; track skill) {
+                  <li>{{ skill }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="getting-started">
+            <span class="getting-started-icon">💡</span>
+
+            <div>
+              <h4>How can you get started?</h4>
+              <p>{{ career.gettingStarted }}</p>
+            </div>
+          </div>
+        </div>
+      }
     </div>
+
+    <p class="career-disclaimer">
+      Career examples are provided for guidance. Job requirements,
+      qualifications and registration rules vary by employer and profession.
+      Always check the requirements of a specific opportunity.
+    </p>
   </section>
 
   <!-- CAREER RESOURCES -->
