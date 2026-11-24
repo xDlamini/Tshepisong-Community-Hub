@@ -38,33 +38,53 @@
     </div>
 
     <div class="action-grid">
-      <a href="#employment-resources" class="action-card">
+      <!-- FIND EMPLOYMENT -->
+      <button
+        type="button"
+        class="action-card"
+        (click)="scrollToSection('employment-resources')"
+      >
         <span class="action-icon" aria-hidden="true">💼</span>
         <h3>Find Employment</h3>
         <p>Explore job-search platforms and employment opportunities.</p>
         <span class="action-link">Find opportunities →</span>
-      </a>
+      </button>
 
-      <a href="#training-resources" class="action-card">
+      <!-- GET TRAINED -->
+      <button
+        type="button"
+        class="action-card"
+        (click)="scrollToSection('training-resources')"
+      >
         <span class="action-icon" aria-hidden="true">🎓</span>
         <h3>Get Trained</h3>
         <p>Discover learnerships, skills programmes and training options.</p>
         <span class="action-link">Explore training →</span>
-      </a>
+      </button>
 
-      <a href="#career-resources" class="action-card">
+      <!-- PREPARE YOUR CV -->
+      <button
+        type="button"
+        class="action-card"
+        (click)="scrollToSection('career-resources')"
+      >
         <span class="action-icon" aria-hidden="true">📄</span>
         <h3>Prepare Your CV</h3>
         <p>Find useful resources to strengthen your job applications.</p>
         <span class="action-link">Get prepared →</span>
-      </a>
+      </button>
 
-      <a href="#career-pathways" class="action-card">
+      <!-- EXPLORE CAREERS -->
+      <button
+        type="button"
+        class="action-card"
+        (click)="scrollToSection('career-pathways')"
+      >
         <span class="action-icon" aria-hidden="true">🚀</span>
         <h3>Explore Careers</h3>
         <p>Discover different industries, roles and possible career paths.</p>
         <span class="action-link">Explore careers →</span>
-      </a>
+      </button>
     </div>
   </section>
 
@@ -247,39 +267,310 @@
     </p>
   </section>
 
-  <!-- CAREER RESOURCES -->
+  <!-- CV & JOB APPLICATION CENTRE -->
   <section
     id="career-resources"
     class="career-resources-section section-container"
   >
     <div class="section-heading">
-      <span class="section-eyebrow">GET APPLICATION READY</span>
-      <h2>Prepare for your next opportunity</h2>
+      <span class="section-eyebrow">YOUR CAREER TOOLKIT</span>
+      <h2>Build a CV that opens doors</h2>
       <p>
-        Finding an opportunity is one step. Being ready to apply is another.
+        You don't need years of work experience to create a good CV. Learn how
+        to present your education, skills, projects and experience in a way that
+        helps employers understand what you can offer.
       </p>
     </div>
 
-    <div class="preparation-grid">
-      <article class="preparation-card">
-        <h3>Build a strong CV</h3>
-        <p>Learn how to present your skills, education and experience.</p>
-      </article>
-
-      <article class="preparation-card">
-        <h3>Prepare for interviews</h3>
+    <!-- CV INTRO -->
+    <div class="cv-intro-panel">
+      <div>
+        <span class="cv-panel-label">START HERE</span>
+        <h3>Your CV is your introduction to an employer.</h3>
         <p>
-          Build confidence and learn how to answer common interview questions.
+          A good CV is clear, truthful and relevant to the opportunity you're
+          applying for. You don't have to include everything about yourself.
+          Focus on what makes you suitable for the role.
         </p>
-      </article>
+      </div>
 
-      <article class="preparation-card">
-        <h3>Understand applications</h3>
+      <div class="cv-intro-icon" aria-hidden="true">📄</div>
+    </div>
+
+    <!-- CV STRUCTURE -->
+    <div class="cv-guide-section">
+      <div class="cv-subheading">
+        <span class="section-eyebrow">STEP 1</span>
+        <h3>What should your CV include?</h3>
+        <p>Use this structure as a starting point when creating your CV.</p>
+      </div>
+
+      <div class="cv-structure-grid">
+        <article class="cv-structure-card">
+          <span class="cv-number">01</span>
+          <h4>Contact information</h4>
+          <p>Make it easy for employers to contact you.</p>
+          <ul>
+            <li>Full name</li>
+            <li>Professional email address</li>
+            <li>Contact number</li>
+            <li>Town or area where you are based</li>
+          </ul>
+        </article>
+
+        <article class="cv-structure-card">
+          <span class="cv-number">02</span>
+          <h4>Personal profile</h4>
+          <p>Introduce yourself in a short paragraph.</p>
+          <ul>
+            <li>Your professional interests</li>
+            <li>Your strongest qualities</li>
+            <li>What you can contribute</li>
+            <li>Your career goals</li>
+          </ul>
+        </article>
+
+        <article class="cv-structure-card">
+          <span class="cv-number">03</span>
+          <h4>Education and training</h4>
+          <p>Show employers what you have studied.</p>
+          <ul>
+            <li>Schools and institutions</li>
+            <li>Qualifications achieved</li>
+            <li>Courses and certificates</li>
+            <li>Current studies, if applicable</li>
+          </ul>
+        </article>
+
+        <article class="cv-structure-card">
+          <span class="cv-number">04</span>
+          <h4>Work and practical experience</h4>
+          <p>Demonstrate where you've gained experience.</p>
+          <ul>
+            <li>Previous employment</li>
+            <li>Part-time or casual work</li>
+            <li>Volunteer activities</li>
+            <li>Relevant projects or internships</li>
+          </ul>
+        </article>
+
+        <article class="cv-structure-card">
+          <span class="cv-number">05</span>
+          <h4>Skills and abilities</h4>
+          <p>Highlight skills that relate to the job.</p>
+          <ul>
+            <li>Computer and digital skills</li>
+            <li>Communication</li>
+            <li>Customer service</li>
+            <li>Technical or practical skills</li>
+          </ul>
+        </article>
+
+        <article class="cv-structure-card">
+          <span class="cv-number">06</span>
+          <h4>References</h4>
+          <p>Identify people who can speak about your work or character.</p>
+          <ul>
+            <li>Previous supervisors</li>
+            <li>Teachers or lecturers</li>
+            <li>Mentors or project leaders</li>
+            <li>Ask permission before listing them</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- NO EXPERIENCE GUIDANCE -->
+    <div class="first-cv-panel">
+      <div class="first-cv-heading">
+        <span class="section-eyebrow">NO WORK EXPERIENCE?</span>
+        <h3>You can still build a strong first CV.</h3>
         <p>
-          Learn how to apply professionally and avoid common job-search
-          mistakes.
+          Employers may also want to see your potential, initiative and
+          willingness to learn. Consider including:
         </p>
-      </article>
+      </div>
+
+      <div class="first-cv-examples">
+        <div>
+          <span aria-hidden="true">🎓</span>
+          <strong>School and college projects</strong>
+          <p>Research, assignments, presentations and practical work.</p>
+        </div>
+
+        <div>
+          <span aria-hidden="true">🤝</span>
+          <strong>Community involvement</strong>
+          <p>
+            Volunteering, organising activities and helping community
+            initiatives.
+          </p>
+        </div>
+
+        <div>
+          <span aria-hidden="true">💡</span>
+          <strong>Personal projects</strong>
+          <p>
+            Websites, designs, repairs, creative work or small business
+            activities.
+          </p>
+        </div>
+
+        <div>
+          <span aria-hidden="true">🏆</span>
+          <strong>Leadership and achievements</strong>
+          <p>School responsibilities, sports leadership and awards.</p>
+        </div>
+      </div>
+
+      <div class="profile-example">
+        <span class="profile-example-label">EXAMPLE PERSONAL PROFILE</span>
+        <p>
+          "Motivated and reliable school leaver with good communication skills
+          and a willingness to learn. I enjoy working with people, solving
+          problems and contributing to a team. I am seeking an entry-level
+          opportunity where I can develop my skills and gain practical workplace
+          experience."
+        </p>
+        <span class="profile-example-note">
+          Example only. Applicants should adapt this to reflect their real
+          qualities and goals.
+        </span>
+      </div>
+    </div>
+
+    <!-- CV CHECKLIST -->
+    <div class="cv-checklist-section">
+      <div class="cv-subheading">
+        <span class="section-eyebrow">STEP 2</span>
+        <h3>Before you submit your CV</h3>
+        <p>Use this checklist to review your application.</p>
+      </div>
+
+      <div class="cv-checklist">
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>My contact details are correct and up to date.</span>
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>My CV is tailored to the position I'm applying for.</span>
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span
+            >My education, skills and experience are clearly presented.</span
+          >
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>My information is truthful and accurate.</span>
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>I've checked my spelling, grammar and formatting.</span>
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>I've included the documents requested in the job advert.</span>
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span
+            >My referees have agreed to be contacted, where applicable.</span
+          >
+        </label>
+
+        <label class="cv-check-item">
+          <input type="checkbox" />
+          <span>I've saved my final CV in the required format.</span>
+        </label>
+      </div>
+
+      <p class="checklist-tip">
+        Remember: always follow the employer's instructions. Some vacancies
+        require additional forms or supporting documents.
+      </p>
+    </div>
+
+    <!-- APPLICATION ADVICE -->
+    <div class="application-tips-section">
+      <div class="cv-subheading">
+        <span class="section-eyebrow">STEP 3</span>
+        <h3>Apply smarter, not just more often.</h3>
+        <p>Small improvements can make your applications more professional.</p>
+      </div>
+
+      <div class="application-tips-grid">
+        <article>
+          <span>🔍</span>
+          <h4>Read the job advert carefully</h4>
+          <p>
+            Understand the responsibilities, minimum requirements and
+            application deadline.
+          </p>
+        </article>
+
+        <article>
+          <span>🎯</span>
+          <h4>Match your skills to the role</h4>
+          <p>
+            Highlight relevant experience and skills that genuinely match the
+            vacancy.
+          </p>
+        </article>
+
+        <article>
+          <span>✉️</span>
+          <h4>Use a professional email</h4>
+          <p>
+            Include the job title or reference number in your subject line when
+            requested.
+          </p>
+        </article>
+
+        <article>
+          <span>📎</span>
+          <h4>Submit the right documents</h4>
+          <p>
+            Check whether the employer requires a CV, cover letter, certificates
+            or application form.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- EXTERNAL RESOURCES -->
+    <div class="cv-external-resources">
+      <div>
+        <span class="section-eyebrow">KEEP LEARNING</span>
+        <h3>Free CV and job application guidance</h3>
+        <p>
+          Explore additional guidance from South African government resources.
+        </p>
+      </div>
+
+      <a
+        href="https://www.gov.za/issues/compiling-curriculum-vitae-0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        South African Government CV guide →
+      </a>
+
+      <a
+        href="https://www.labour.gov.za/DocumentCenter/Publications/Public%20Employment%20Services/Job%20hunting%20Skills_.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Department of Employment and Labour job-hunting guide →
+      </a>
     </div>
   </section>
 </main>

@@ -248,4 +248,11 @@ export class CareersComponent {
     selectCategory(categoryId: string): void {
         this.selectedCategory.set(categoryId);
     }
+
+    scrollToSection(sectionId: string): void {
+        document.getElementById(sectionId)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
 }

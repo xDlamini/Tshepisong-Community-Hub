@@ -718,4 +718,373 @@
     grid-template-columns: 1fr;
     gap: 25px;
   }
+
+
+/* =========================================
+   CV & JOB APPLICATION CENTRE
+========================================= */
+
+.career-resources-section {
+  padding-block: 45px 90px;
+}
+
+/* Intro panel */
+
+.cv-intro-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 35px;
+  margin-bottom: 55px;
+  background: linear-gradient(120deg, #0d3a1f, #1a6b3a);
+  border-radius: var(--radius-lg, 16px);
+  color: #fff;
+}
+
+.cv-intro-panel > div:first-child {
+  max-width: 700px;
+}
+
+.cv-panel-label,
+.profile-example-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f5d090;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.cv-intro-panel h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.25;
+}
+
+.cv-intro-panel p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.cv-intro-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 95px;
+  height: 95px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 3rem;
+}
+
+/* Subheadings */
+
+.cv-guide-section,
+.first-cv-panel,
+.cv-checklist-section,
+.application-tips-section {
+  margin-bottom: 65px;
+}
+
+.cv-subheading {
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.cv-subheading h3,
+.first-cv-heading h3,
+.cv-external-resources h3 {
+  margin: 0 0 10px;
+  color: var(--color-primary-dark, #123d25);
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  line-height: 1.3;
+}
+
+.cv-subheading p,
+.first-cv-heading p,
+.cv-external-resources p {
+  margin: 0;
+  color: var(--color-muted, #686868);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* CV structure cards */
+
+.cv-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cv-structure-card {
+  position: relative;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid var(--color-border, #e8e1d8);
+  border-radius: var(--radius-lg, 16px);
+}
+
+.cv-number {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: var(--color-accent, #c8922a);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.cv-structure-card h4 {
+  margin: 0 0 9px;
+  color: var(--color-primary-dark, #123d25);
+  font-size: 1.05rem;
+}
+
+.cv-structure-card p {
+  margin: 0 0 15px;
+  color: var(--color-muted, #686868);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.cv-structure-card ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  margin: 0;
+  color: #514b41;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* First CV guidance */
+
+.first-cv-panel {
+  padding: 35px;
+  background: #fff;
+  border: 1px solid var(--color-border, #e8e1d8);
+  border-radius: var(--radius-lg, 16px);
+}
+
+.first-cv-heading {
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.first-cv-examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.first-cv-examples > div {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: start;
+}
+
+.first-cv-examples > div > span {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: #f4ead7;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.first-cv-examples strong {
+  color: var(--color-primary-dark, #123d25);
+  font-size: 0.93rem;
+}
+
+.first-cv-examples p {
+  margin: 5px 0 0;
+  color: var(--color-muted, #686868);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Example profile */
+
+.profile-example {
+  margin-top: 30px;
+  padding: 24px;
+  background: #f4f0e6;
+  border-left: 4px solid var(--color-accent, #c8922a);
+  border-radius: 10px;
+}
+
+.profile-example-label {
+  color: #88621f;
+}
+
+.profile-example p {
+  margin: 0 0 12px;
+  color: #514b41;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.profile-example-note {
+  color: #786b58;
+  font-size: 0.76rem;
+  font-style: italic;
+}
+
+/* Interactive checklist */
+
+.cv-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cv-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 17px;
+  background: #fff;
+  border: 1px solid var(--color-border, #e8e1d8);
+  border-radius: 12px;
+  cursor: pointer;
+  color: #514b41;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.cv-check-item input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 2px 0 0;
+  accent-color: var(--color-primary, #1a6b3a);
+  cursor: pointer;
+}
+
+.cv-check-item:has(input:checked) {
+  background: #edf5ee;
+  border-color: #a9c9ae;
+}
+
+.cv-check-item input:checked + span {
+  color: var(--color-primary-dark, #123d25);
+}
+
+.checklist-tip {
+  margin: 18px 0 0;
+  color: var(--color-muted, #686868);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* Application tips */
+
+.application-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.application-tips-grid article {
+  padding: 23px;
+  background: #fff;
+  border: 1px solid var(--color-border, #e8e1d8);
+  border-radius: var(--radius-lg, 16px);
+}
+
+.application-tips-grid article > span {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 1.6rem;
+}
+
+.application-tips-grid h4 {
+  margin: 0 0 9px;
+  color: var(--color-primary-dark, #123d25);
+  font-size: 0.96rem;
+}
+
+.application-tips-grid p {
+  margin: 0;
+  color: var(--color-muted, #686868);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+/* External resources */
+
+.cv-external-resources {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 30px;
+  background: #eaf2eb;
+  border-radius: var(--radius-lg, 16px);
+}
+
+.cv-external-resources > div {
+  margin-bottom: 5px;
+}
+
+.cv-external-resources a {
+  color: var(--color-primary, #1a6b3a);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cv-external-resources a:hover {
+  text-decoration: underline;
+}
+
+/* CV section responsive layouts */
+
+@media (max-width: 900px) {
+  .cv-structure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .application-tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cv-intro-panel {
+    padding: 25px 22px;
+  }
+
+  .cv-intro-icon {
+    display: none;
+  }
+
+  .cv-structure-grid,
+  .first-cv-examples,
+  .cv-checklist,
+  .application-tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .first-cv-panel {
+    padding: 25px 20px;
+  }
+
+  .cv-structure-card {
+    padding: 22px;
+  }
+
+  .cv-external-resources {
+    padding: 25px 20px;
+  }
+}
+
+  
 }
