@@ -20,10 +20,10 @@
     </p>
 
     <div class="hero-btns">
-      <a class="btn btn-primary" routerLink="/spotlight"
-        >Explore Our Community</a
-      >
-      <a class="btn btn-outline" routerLink="/businesses">Local Businesses</a>
+      <a class="btn btn-primary" routerLink="/spotlight">
+        Explore Our Community
+      </a>
+      <a class="btn btn-outline" routerLink="/businesses"> Local Businesses </a>
     </div>
 
     <!-- Stats -->
@@ -86,9 +86,57 @@
     </div>
 
     <div class="biz-footer">
-      <a class="btn btn-secondary" routerLink="/businesses"
-        >See All Businesses →</a
-      >
+      <a class="btn btn-secondary" routerLink="/businesses">
+        See All Businesses →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMMUNITY HEROES ══════════════════ -->
+<section class="heroes-feature" aria-labelledby="heroes-title">
+  <div class="container">
+    <div class="heroes-feature-card">
+      <!-- Featured Hero Image -->
+      <div class="heroes-image">
+        <img
+          src="assets/images/community-heroes/featured-hero.jpg"
+          alt="A featured member of the Tshepisong community"
+          loading="lazy"
+        />
+
+        <span class="heroes-image-label"> Celebrating Our People </span>
+      </div>
+
+      <!-- Featured Hero Content -->
+      <div class="heroes-content">
+        <span class="heroes-eyebrow">
+          <span class="heroes-eyebrow-line"></span>
+          COMMUNITY HEROES
+        </span>
+
+        <h2 id="heroes-title">
+          Great Communities Are Built by
+          <em>Extraordinary People.</em>
+        </h2>
+
+        <p>
+          Meet the coaches, mentors, entrepreneurs, creatives and everyday
+          people whose dedication makes Tshepisong a better place to call home.
+        </p>
+
+        <a class="heroes-link" routerLink="/community-heroes">
+          Discover Their Stories
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a class="heroes-nominate" routerLink="/contact">
+          Know someone worth celebrating? Nominate them.
+        </a>
+      </div>
+
+      <!-- Decorative Background Text -->
+      <div class="heroes-decoration" aria-hidden="true">PEOPLE</div>
     </div>
   </div>
 </section>
@@ -112,6 +160,7 @@
             <span class="notice-month">{{ notice.monthShort }}</span>
             <span class="notice-day">{{ notice.dayNum }}</span>
           </div>
+
           <div class="notice-body">
             <h3 class="notice-title">{{ notice.title }}</h3>
             <p class="notice-text">{{ notice.body }}</p>
@@ -126,16 +175,20 @@
 <section class="cta-band" aria-labelledby="cta-title">
   <div class="cta-inner">
     <span class="sec-eyebrow sec-eyebrow-white">Be Part of This</span>
+
     <h2 id="cta-title">Tshepisong Is Built by Its People</h2>
+
     <p>
       Whether you run a business, have a story to share, or want your
       organisation featured — this website belongs to all of us.
     </p>
+
     <div class="cta-btns">
-      <a class="btn btn-primary" routerLink="/contact"
-        >List Your Business — Free</a
-      >
-      <a class="btn btn-outline" routerLink="/contact">Send Us a Message</a>
+      <a class="btn btn-primary" routerLink="/contact">
+        List Your Business — Free
+      </a>
+
+      <a class="btn btn-outline" routerLink="/contact"> Send Us a Message </a>
     </div>
   </div>
 </section>

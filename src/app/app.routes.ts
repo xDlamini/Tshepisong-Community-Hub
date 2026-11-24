@@ -49,6 +49,22 @@ export const routes: Routes = [
         .then(m => m.CareersComponent),
     title: 'Careers & Opportunities | Tshepisong Community Hub',
   },
+
+  {
+    path: 'community-heroes/:slug',
+    loadComponent: () =>
+      import('./features/community-heroes/community-hero-article.component')
+        .then(m => m.CommunityHeroArticleComponent),
+    title: 'Community Hero Story | Tshepisong Community Hub',
+  },
+  {
+    path: 'community-heroes',
+    loadComponent: () =>
+      import('./features/community-heroes/community-heroes.component')
+        .then(m => m.CommunityHeroesComponent),
+    title: 'Community Heroes | Tshepisong Community Hub',
+  },
+
   {
     path: 'service-tracker', component: ServiceTrackerPageComponent
   },

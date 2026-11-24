@@ -1,0 +1,34 @@
+<section class="heroes-hero">
+  <div class="hero-orbit"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">THE PEOPLE BEHIND OUR COMMUNITY</span>
+    <h1>Every community has <em>extraordinary people.</em></h1>
+    <p>Meet the coaches, mentors, entrepreneurs, creatives and everyday changemakers whose stories deserve to be heard.</p>
+    <a class="hero-cta" href="#meet-the-heroes">Meet our community heroes <span>↓</span></a>
+  </div>
+</section>
+
+<div class="demo-notice"><strong>PROTOTYPE PREVIEW:</strong> All names, portraits, stories and interview answers below are fictional demonstration content. Replace them with verified profiles and approved photographs before publishing.</div>
+
+<section class="featured-section"><div class="shell">
+  <span class="kicker">IN THE SPOTLIGHT</span>
+  <div class="featured-card">
+    <div class="featured-photo"><img [src]="featuredHero.imageUrl" [alt]="featuredHero.imageAlt"><span>FEATURED STORY · DEMO</span></div>
+    <div class="featured-copy"><span class="category">{{ featuredHero.category }}</span><h2>{{ featuredHero.name }}</h2><h3>{{ featuredHero.role }}</h3><p>{{ featuredHero.shortIntro }}</p><blockquote>“{{ featuredHero.quote }}”</blockquote><a class="text-link" [routerLink]="['/community-heroes', featuredHero.slug]">Read the featured interview →</a></div>
+  </div>
+</div></section>
+
+<section class="directory-section" id="meet-the-heroes"><div class="shell">
+  <div class="directory-heading"><div><span class="kicker">THE PEOPLE MAKING A DIFFERENCE</span><h2>Meet our community heroes</h2><p>Different journeys. Different talents. One community moving forward.</p></div><div class="count"><strong>{{ filteredHeroes().length }}</strong><span>demo profiles</span></div></div>
+  <div class="filters">
+    <input type="search" placeholder="Search people, roles or stories..." aria-label="Search community heroes" [value]="searchTerm()" (input)="searchTerm.set($any($event.target).value)">
+    <div class="chips">@for (category of categories; track category) { <button type="button" class="chip" [class.active]="selectedCategory() === category" [attr.aria-pressed]="selectedCategory() === category" (click)="selectedCategory.set(category)">{{ category }}</button> }</div>
+  </div>
+  <div class="heroes-grid">
+    @for (hero of filteredHeroes(); track hero.slug) {
+      <article class="hero-card"><a class="card-photo" [routerLink]="['/community-heroes', hero.slug]"><img [src]="hero.imageUrl" [alt]="hero.imageAlt" loading="lazy"><span>{{ hero.category }}</span></a><div class="card-copy"><small>DEMO PROFILE</small><h3><a [routerLink]="['/community-heroes', hero.slug]">{{ hero.name }}</a></h3><h4>{{ hero.role }}</h4><p>{{ hero.shortIntro }}</p><a class="text-link" [routerLink]="['/community-heroes', hero.slug]">Read their story →</a></div></article>
+    } @empty { <div class="empty"><h3>No matching stories found</h3><p>Try another search term or category.</p><button type="button" (click)="searchTerm.set(''); selectedCategory.set('All')">Clear filters</button></div> }
+  </div>
+</div></section>
+
+<section class="nominate"><div class="nominate-inner"><div><span class="kicker">KNOW SOMEONE INSPIRING?</span><h2>Everyday people can make an extraordinary difference.</h2><p>Help us discover the people whose contributions and stories deserve recognition.</p></div><a routerLink="/contact" fragment="contact-form">Nominate a community hero →</a></div></section>

@@ -1,0 +1,149 @@
+@if (hero(); as profile) {
+  <article class="article-page">
+    <!-- ARTICLE AUTHOR -->
+    <div class="article-author">
+      <img
+        class="article-author-image"
+        [src]="profile.author.image"
+        [alt]="profile.author.name"
+      />
+
+      <div class="article-author-details">
+        <span class="article-author-label">Article written by</span>
+        <strong>{{ profile.author.name }}</strong>
+        <span class="article-author-role">
+          {{ profile.author.role }} · Tshepisong Community Hub
+        </span>
+      </div>
+    </div>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <a routerLink="/community-heroes">← All community heroes</a>
+      <span>{{ profile.category }}</span>
+    </div>
+
+    <!-- DEMO NOTICE -->
+    <div class="demo-note">
+      DEMONSTRATION ARTICLE — This profile, portrait and interview are fictional
+      sample content. Replace and fact-check before publication.
+    </div>
+
+    <!-- ARTICLE HEADER -->
+    <header class="article-header">
+      <span class="kicker"> COMMUNITY HEROES · {{ profile.location }} </span>
+
+      <h1>{{ profile.interviewTitle }}</h1>
+
+      <p>{{ profile.interviewIntro }}</p>
+
+      <div class="byline">
+        Tshepisong Community Desk ·
+        <time [attr.datetime]="profile.publishedDate">
+          {{ profile.publishedDate | date: "d MMMM y" }}
+        </time>
+      </div>
+    </header>
+
+    <!-- COVER IMAGE -->
+    <figure class="cover">
+      <img [src]="profile.imageUrl" [alt]="profile.imageAlt" />
+
+      <figcaption>
+        Stock demonstration portrait. Replace with an approved photograph.
+      </figcaption>
+    </figure>
+
+    <!-- ARTICLE CONTENT -->
+    <div class="article-layout">
+      <!-- HERO PROFILE -->
+      <aside class="profile">
+        <span class="kicker">MEET THE HERO</span>
+
+        <h2>{{ profile.name }}</h2>
+        <h3>{{ profile.role }}</h3>
+
+        <p>{{ profile.biography }}</p>
+
+        <div class="contribution">
+          <strong>Community contribution</strong>
+          <span>{{ profile.contribution }}</span>
+        </div>
+
+        <blockquote>“{{ profile.quote }}”</blockquote>
+      </aside>
+
+      <!-- INTERVIEW -->
+      <main class="interview">
+        <span class="kicker">THE CONVERSATION</span>
+
+        <h2>In their own words</h2>
+
+        <p class="intro">
+          Read the full conversation and discover the experiences behind the
+          contribution.
+        </p>
+
+        @for (item of profile.interview; track $index) {
+          <section class="qa">
+            <span>Q{{ $index + 1 }}</span>
+
+            <div>
+              <h3>{{ item.question }}</h3>
+              <p>{{ item.answer }}</p>
+            </div>
+          </section>
+        }
+
+        <!-- CLOSING CTA -->
+        <div class="closing">
+          <span class="kicker"> A COMMUNITY THAT CELEBRATES ITS PEOPLE </span>
+
+          <h2>Every story can inspire the next.</h2>
+
+          <p>
+            Know someone whose contribution deserves recognition? Help us
+            discover more local stories.
+          </p>
+
+          <a routerLink="/contact" fragment="contact-form">
+            Nominate a community hero →
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <!-- RELATED STORIES -->
+    <section class="more">
+      <span class="kicker">KEEP DISCOVERING</span>
+
+      <h2>More community stories</h2>
+
+      <div class="related-grid">
+        @for (related of relatedHeroes; track related.slug) {
+          @if (related.slug !== profile.slug) {
+            <a [routerLink]="['/community-heroes', related.slug]">
+              <img
+                [src]="related.imageUrl"
+                [alt]="related.imageAlt"
+                loading="lazy"
+              />
+
+              <strong>{{ related.name }}</strong>
+              <small>{{ related.category }}</small>
+            </a>
+          }
+        }
+      </div>
+    </section>
+  </article>
+} @else {
+  <!-- STORY NOT FOUND -->
+  <section class="not-found">
+    <h1>We couldn't find that story.</h1>
+
+    <p>The profile may have moved or the address may be incorrect.</p>
+
+    <a routerLink="/community-heroes"> Explore community heroes → </a>
+  </section>
+}
